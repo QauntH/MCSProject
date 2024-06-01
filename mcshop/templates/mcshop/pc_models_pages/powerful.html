@@ -1,0 +1,1142 @@
+{% extends 'mcshop/pc_models_pages/base.html' %}
+{% load static %}
+
+
+{% block series_name %}Мощные{% endblock %}
+{% block responsive_series_name %}МОЩНЫЕ ИГРОВЫЕ КОМПЬЮТЕРЫ{% endblock %}
+{% block responsive_p %}
+    Мощные игровые компьютеры для максимальных настроек графики в играх отлично подходят для киберспортивных игроков и геймеров,
+    ценящих плавность игрового процесса с высоким FPS на максимальных графических настройках
+{% endblock %}
+{% block series_styles %}
+    @media (max-width: 991.98px) {
+
+    .responsive {
+        background-image: url({% static 'images/for-powerful-sub.jpg' %});
+    }
+}
+
+    @media (min-width: 992px) {
+
+    .responsive {
+        background-image: url({% static 'images/for-powerful-main.jpg' %});
+    }
+}
+    .responsive-paragraph {
+    color: #FFFFFF;
+}
+{% endblock %}
+
+{% block content %}
+            <section class="model_alpha">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Alpha</span>
+                            </h2>
+                            <div class="series-title m-1 p-4">
+                                <p>Компьютеры серии ALPHA – это производительный компьютер с компактным и стильным корпусом с RGB-подсветкой, идеален для эстетов и геймеров.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alpha-cards row">
+                        <div class="alpha standard col-md-4 col-sm-6 col-12">
+                            <div id="carouselAlphaStandard" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselAlphaStandard" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaStandard" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaStandard" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 124
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 33%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    ALPHA STANDARD
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 98800 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i5-12400(F)
+                                    [до 4.5GHz, 4 ядер] и видеокарты GeForce RTX 2060 SUPER Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2060 SUPER [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i5-12400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        16GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        1TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="alpha vip col-md-4 col-sm-6 col-12">
+                            <div id="carouselAlphaVip" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselAlphaVip" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaVip" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaVip" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 136
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    ALPHA VIP
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 110800 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i5-13400(F)
+                                    [до 4.2GHz, 8 ядер] и видеокарты GeForce RTX 2060 SUPER Dual [6GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2060 SUPER [6GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i5-13400(F) [до 4.2GHz, 8 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        32GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="alpha premium col-md-4 col-sm-6 col-12">
+                            <div id="carouselAlphaPremium" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselAlphaPremium" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaPremium" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselAlphaPremium" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 144
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    ALPHA PREMIUM
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 134200 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i5-14400(F)
+                                    [до 4.4GHz, 6 ядер] и видеокарты GeForce RTX 2070 SUPER Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2070 SUPER [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i5-13400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        32GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        650W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="model_gamma">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Gamma</span>
+                            </h2>
+                            <div class="series-title m-1 p-4">
+                                <p>Компьютеры серии GAMMA – модель для энтузиастов и профессионалов, разработана с акцентом на высокую производительность.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gamma-cards row">
+                        <div class="gamma standard col-md-4 col-sm-6 col-12">
+                            <div id="carouselGammaStandard" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselGammaStandard" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselGammaStandard" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselGammaStandard" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 121
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 33%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    GAMMA STANDARD
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 102200 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-11400(F)
+                                    [до 4.5GHz, 4 ядер] и видеокарты GeForce RTX 2070Ti Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2070Ti [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-11400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        32GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        1TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="gamma vip col-md-4 col-sm-6 col-12">
+                            <div id="carouselGammaVip" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselGammaVip" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselGammaVip" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselGammaVip" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 143
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    GAMMA VIP
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 135000 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-12400(F)
+                                    [до 4.2GHz, 8 ядер] и видеокарты GeForce RTX 2070Ti Dual [6GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2070Ti [6GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-12400(F) [до 4.2GHz, 8 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        32GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="gamma premium col-md-4 col-sm-6 col-12">
+                            <div id="carouselGammaPremium" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselGammaPremium" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselGammaPremium" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselGammaPremium" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 156
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    GAMMA PREMIUM
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 165000 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-14400(F)
+                                    [до 4.4GHz, 6 ядер] и видеокарты GeForce RTX 2080Ti Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 2080Ti [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-14400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        64GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        650W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="model_delta">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Delta</span>
+                            </h2>
+                            <div class="series-title m-1 p-4">
+                                <p>Компьютеры серии DELTA характеризуются экстремальной производительностью и передовыми компонентами в вершине игровой линейки.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="delta-cards row">
+                        <div class="delta standard col-md-4 col-sm-6 col-12">
+                            <div id="carouselDeltaStandard" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselDeltaStandard" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaStandard" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaStandard" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 156
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 33%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    DELTA STANDARD
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 144500 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-12400(F)
+                                    [до 4.5GHz, 4 ядер] и видеокарты GeForce RTX 3050Ti Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 30500Ti [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-12400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        32GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        1TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="delta vip col-md-4 col-sm-6 col-12">
+                            <div id="carouselDeltaVip" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselDeltaVip" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaVip" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaVip" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 166
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    DELTA VIP
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 163400 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-13400(F)
+                                    [до 4.2GHz, 8 ядер] и видеокарты GeForce RTX 3050Ti Dual [6GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 3050Ti [6GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-13400(F) [до 4.2GHz, 8 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        64GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        600W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="delta premium col-md-4 col-sm-6 col-12">
+                            <div id="carouselDeltaPremium" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselDeltaPremium" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaPremium" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselDeltaPremium" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - 187
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 55%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming col-12">
+                                    DELTA PREMIUM
+                                </div>
+                                <div class="card-price d-flex justify-content-start col-6">
+                                    Цена 184500 ₽
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                        <button class="btn btn-dark">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                            В корзину
+                                        </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    Игровая платформа, построенная на базе процессора Intel® Core™ i7-14400(F)
+                                    [до 4.4GHz, 6 ядер] и видеокарты GeForce RTX 3060Ti Dual [8GB, 3072 CUDA].
+                                </div>
+                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-gear"></i>
+                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    </button>
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-end pt-5">
+                                    <button class="btn btn-dark">
+                                        Подробнее
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        RTX 3060Ti [8GB, 3072 CUDA]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        Intel® Core™ i7-14400(F) [до 4.5GHz, 4 ядра]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        MSI PRO B760M-G [DDR4]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        64GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        2TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        650W Deepcool PK500D [80+ Bronze]
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+{% endblock %}
+
+

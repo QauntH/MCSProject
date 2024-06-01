@@ -1,0 +1,77 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block main %}
+        <main class="main">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><span>Регистрация</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-register bg-white p-3">
+                            <h1 class="section-title-custom"><span>Регистрация</span></h1>
+
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label for="nickname" class="form-label">Ваше имя пользователя</label>
+                                            <input type="text" class="form-control" id="nickname" placeholder="Nickname" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Имя пользователя.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Ваше имя</label>
+                                            <input type="text" class="form-control" id="name" placeholder="Name" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Имя.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Электронная почта</label>
+                                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Email.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="phone" class="form-label">Номер телефона</label>
+                                            <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Номер телефона.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Пароль.
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 text-end">
+                                            <button type="submit" class="btn btn-dark">Зарегистрироваться</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block main %}
+        <main class="main">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><span>Поддержка</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+
+                <h1 class="section-title h4">
+                    <span>Задайте свой вопрос</span>
+                </h1>
+
+                <form action="" class="needs-validation" novalidate>
+
+                    <div class="row">
+
+                        <div class="col-12">
+                            <div class="checkout-content p-3 h-100 bg-white">
+    
+                                
+                                
+                                <div class="row g-3">
+
+                                    <div class="col-12">
+                                        <input type="text" id="name" class="form-control" name="name"
+                                        placeholder="Ваше имя *" aria-label="Name" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="email" name="email" id="email" class="form-control"
+                                        placeholder="Email *" aria-label="Email">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <input type="tel" name="phone" id="phone" class="form-control"
+                                        placeholder="Телефон для связи *" aria-label="Phone" required>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <textarea class="form-control" id="comment" cols="" rows="2" placeholder="Ваш вопрос..."></textarea>
+                                    </div>
+
+                                    <div class="col-12 text-end">
+                                        <a href="#" class="btn btn-dark">Отправить <i class="fa-solid fa-chevron-right" style="padding-left: 5px"></i></a>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                
+            </div>
+
+        </main>
+{% endblock %}
+        

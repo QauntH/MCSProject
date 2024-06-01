@@ -1,0 +1,34 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block main %}
+
+    <section class="responsive position-relative">
+        <div class="responsive-container">
+            <div class="text-responsive">
+                <div class="responsive-title">
+                    <h1>{% block responsive_series_name %}{% endblock %}</h1>
+                </div>
+                <div class="responsive-paragraph">
+                    <p>{% block responsive_p %}{% endblock %}</p>
+                </div>
+                <button class="btn btn-responsive" type="button" id="scroll-bottom">
+                    КОМПЛЕКТАЦИИ И ЦЕНЫ
+                </button>
+            </div>
+            <div class="for-product-content">
+                {% block product-content %}
+                    <div id="canvas-container" class="canvas-contain">
+                        <canvas id="canvas-small" class="hidden-small"></canvas>
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+
+
+            {% block content %}
+
+            {% endblock %}
+
+{% endblock %}

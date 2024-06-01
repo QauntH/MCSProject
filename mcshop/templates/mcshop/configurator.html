@@ -1,0 +1,219 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+
+{% block main %}
+        <main class="main">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><span>Конфигуратор</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row">
+
+                    <div class="configurator-page bg-white p-3">
+                        <div class="configurator-page-title">
+                            <h1 class="section-title-custom h4"><span>Конфигуратор сборки</span></h1>
+                        </div>
+                        
+
+                        <div class="alert text-center alert-light alert-dismissible fade show" role="alert">
+                            Начните работу с конфигуратором, выбирая модель в соответствующей категории
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                        <div class="configurator-menu">
+                            <div class="row">
+                                <div class="col-6 progress-bar-title my-3">
+                                    Здесь отображается прогресс вашей сборки
+                                    <img src="/mcshop/templates/mcshop/product_detail_icons/right-down.png" alt="">
+                                </div>
+                                <div class="col-6 text-end configurator-menu-price">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            Цена сборки:<br>Бесплатно
+                                        </div>
+                                        <div class="col-6">
+                                            Итоговая цена:<br>53460Р
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6 progress" role="progressbar" aria-label="Example with label" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar" style="width: 50%">4/8</div>
+                                </div>
+                                <div class="col-3 d-grid">
+                                    <button type="submit" class="btn btn-dark configurator-menu-buttons">Поделиться</button>
+                                </div>
+                                <div class="col-3 d-grid">
+                                    <button type="submit" class="btn btn-dark configurator-menu-buttons">Заказать</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="select-container">
+                            <div class="general-select cpu-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Процессор
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель процессора</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select gpu-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Видеокарта
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель видеокарты</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select motherboard-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Материнская плата
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель материнской платы</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select ram-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Оперативная память
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель ОЗУ</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select ssd-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                    Накопитель (SSD)
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель SSD</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select hdd-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Жесткий диск (HDD)
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель HDD</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select power-supply-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Блок питания
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель блока питания</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="general-select case-select my-3">
+                                <div class="row">
+                                    <div class="select-section-title col-2">
+                                        Корпус компьютера
+                                    </div>
+                                    <div class="col-7 configurator-description">Описание модели</div>
+                                    <div class="col-3">
+                                        <select class="form-select text-end" aria-label="Default select example">
+                                            <option selected>Выберите модель корпуса</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                            <option value="4">Three</option>
+                                        </select>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+{% endblock %}

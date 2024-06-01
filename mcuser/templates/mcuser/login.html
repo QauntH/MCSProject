@@ -1,0 +1,56 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block main %}
+        <main class="main">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><span>Вход</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-register bg-white p-3">
+                            <h1 class="section-title-custom"><span>Вход</span></h1>
+
+                            <div class="row">
+                                <div class="col-md-6 offset-md-3">
+                                    <form action="" class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label for="nickname" class="form-label">Ваше имя пользователя</label>
+                                            <input type="text" class="form-control" id="nickname" placeholder="Nickname" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Имя пользователя.
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                            <div class="invalid-feedback">
+                                                Пожалуйста, введите Пароль.
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3 text-end">
+                                            <button type="submit" class="btn btn-dark">Войти</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+{% endblock %}

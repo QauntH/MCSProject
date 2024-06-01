@@ -1,0 +1,202 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block main %}
+        <main class="main">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs">
+                            <ul>
+                                <li><a href="{% url 'home' %}">Главная</a></li>
+                                <li><span>Личный кабинет</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mb-3">
+                <div class="row">
+                    <div class="profile-info-first col-4 text-center">
+                        <div class="profile-img d-block w-100 p-3">
+                            <h2 class="pb-2">Профиль пользователя</h2>
+                            <img src="{% static 'images/users_images/placeholder.png' %}" alt="1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Имя" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Имя.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя пользователя*</label>
+                            <input type="text" class="form-control" id="name" placeholder="Имя пользователя" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Имя пользователя.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Электронная почта*</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Email.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Номер телефона*</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Номер телефона" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Номер телефона.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="adress" class="form-label">Адрес доставки</label>
+                            <input type="text" class="form-control" id="adress" placeholder="Адрес" required>
+                            <div class="invalid-feedback">
+                                Пожалуйста, введите Адрес доставки.
+                            </div>
+                        </div>
+                        <div class="mb-3 text-end">
+                            <button type="submit" class="btn btn-dark">Сохранить</button>
+                        </div>
+                    </div>
+                    <div class="profile-info col-8">
+                        <div class="cart-content p-3 h-100 bg-white">
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-hover">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Фото</th>
+                                            <th>Товар</th>
+                                            <th>Цена</th>
+                                            <th>Кол-во</th>
+                                            <th><i class="fa-regular fa-trash-can"></i></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="product-image-td">
+                                                <a href="#">
+                                                    <img src="/static/images/computer_images/1.jpg" alt="1">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="cart-content-title">Описание товара 1</a>
+                                            </td>
+                                            <td>85600₽</td>
+                                            <td>
+                                                <input type="number" value="1" class="form-control cart-qty">
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-danger">
+                                                    <i class="fa-regular fa-rectangle-xmark"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-image-td">
+                                                <a href="#">
+                                                    <img src="/static/images/computer_images/2.jpg" alt="1">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="cart-content-title">Описание товара 2</a>
+                                            </td>
+                                            <td>83200₽</td>
+                                            <td>
+                                                <input type="number" value="1" class="form-control cart-qty">
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-danger">
+                                                    <i class="fa-regular fa-rectangle-xmark"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="product-image-td">
+                                                <a href="#">
+                                                    <img src="/static/images/computer_images/3.jpg" alt="1">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="#" class="cart-content-title">Описание товара 3</a>
+                                            </td>
+                                            <td>81200₽</td>
+                                            <td>
+                                                <input type="number" value="1" class="form-control cart-qty">
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-outline-danger">
+                                                    <i class="fa-regular fa-rectangle-xmark"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5" class="text-end">
+                                                <button class="btn btn-outline-dark">Обновить корзину</button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                            <div class="cart-summary p-3 sidebar bg-white">
+                                <h5 class="section-title"><span>Сумма покупки</span></h5>
+
+                                <div class="d-flex justify-content-between my-3">
+                                    <h6>
+                                        Цена
+                                    </h6>
+                                    <h6>250000₽</h6>
+                                </div>
+
+                                <div class="d-flex justify-content-between my-3">
+                                    <h6>
+                                        Промокод
+                                    </h6>
+                                    <h6>-25000₽</h6>
+                                </div>
+
+                                <div class="d-flex justify-content-between my-3 border-bottom">
+                                    <h6>
+                                        Доставка
+                                    </h6>
+                                    <h6>Бесплатно</h6>
+                                </div>
+
+                                <button class="btn btn-link px-0 btn-coupon" data-bs-toggle="collapse" data-bs-target="#collapseCoupon">
+                                    Есть промокод?
+                                </button>
+
+                                <div class="input-group collapse" id="collapseCoupon">
+                                    <input type="text" class="form-control" placeholder="Ввведите промокод">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-check"></i>
+                                    </button>
+                                </div>
+
+                                <div class="d-flex justify-content-between my-3">
+                                    <h4>
+                                        Итого
+                                    </h4>
+                                    <h4>225000₽</h4>
+                                </div>
+
+                                <div class="d-grid pt-4">
+                                    <a href="#" class="btn btn-dark">Перейти к оформлению</a>
+                                </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+{% endblock %}

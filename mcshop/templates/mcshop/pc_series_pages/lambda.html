@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lambda</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owlcarousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="header-top py-1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-sm-4">
+                            <div class="header-top-phone d-flex align-items-center h-100">
+                                <i class="fa-solid fa-phone"></i>
+                                <a href="tel:+79885463233" class="ms-2">+7 (988)-546-32-33</a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 d-none d-sm-block">
+                            <ul class="social-icons d-flex justify-content-center">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-sm-4">
+                            <div class="header-top-account d-flex justify-content-end">
+                                <div class="btn-group me-2">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                            Аккаунт
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="#">Вход</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">Регистрация</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="btn-group">
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                            RU
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="#">EN</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#">FR</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle bg-light py-4">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-sm-6 col-lg-4">
+                            <a href="#" class="header-logo h2">ComputerShop</a>
+                        </div>
+
+                        <div class="col-lg-4 order-md-2 cart-buttons text-end d-none d-lg-block">
+                            <button class="btn p-1" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span class="badge text-bg-dark cart-badge bg-dark rounded-circle">16</span>
+                            </button>
+                        </div>
+
+                        <div class="col-lg-4 col-sm-6 order-md-1 mt-2 mt-md-0">
+                            <form action="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control"
+                                    name="search"
+                                    placeholder="Поиск..."
+                                    aria-label="Поиск..."
+                                    aria-describedby="button-search">
+                                    <button class="btn btn-outline-dark"
+                                    type="submit" id="button-search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas offcanvas-end" tabindex="-1"
+            id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasCartLabel">Корзина</h5>
+                    <button type="button" class="btn-close"
+                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="table-responsive">
+                        <table class="table offcanvasCart-table">
+                            <tbody>
+                                <tr>
+                                    <td class="product-image-td"><a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a></td>
+                                    <td><a href="#">Описание товара 1</a></td>
+                                    <td>85600₽</td>
+                                    <td>&times;1</td>
+                                    <td><button class="btn btn-outline-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td class="product-image-td"><a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a></td>
+                                    <td><a href="#">Описание товара 2</a></td>
+                                    <td>83200₽</td>
+                                    <td>&times;3</td>
+                                    <td><button class="btn btn-outline-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td class="product-image-td"><a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a></td>
+                                    <td><a href="#">Описание товара 3</a></td>
+                                    <td>81200₽</td>
+                                    <td>&times;1</td>
+                                    <td><button class="btn btn-outline-danger"><i class="fa-regular fa-circle-xmark"></i></button></td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" class="text-end">Итог:</td>
+                                    <td>250000₽</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+                    <div class="text-end mt-3">
+                        <a href="#" class="btn btn-outline-dark">Корзина</a>
+                        <a href="#" class="btn btn-outline-dark">К оплате</a>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <div class="header-bottom sticky-top" id="header-nav">
+            <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" id="offcanvasNavbar"
+                    tabindex="-1" aria-labelledby="offcanvasNavbarLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Каталог</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"
+                                    role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-auto-close="outside">
+                                        Модели
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item dropend">
+                                            <a href="#" class="dropdown-item dropdown-toggle dropdown-title dropdown-item-custom"
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                                Оптимальные
+                                                <p class="nav-item-comment">Идеальный выбор для FHD / 2K</p>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Beta
+                                                        <p class="nav-item-comment">На базе GTX 1070Ti / 1080Ti</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Upsilon
+                                                        <p class="nav-item-comment">На базе GTX 1650 Super / 1660 Super</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Theta
+                                                        <p class="nav-item-comment">На базе GTX 1650Ti / 1660Ti</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item dropdown-item-all" href="#">Смотреть все модели</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropend">
+                                            <a href="#" class="dropdown-item dropdown-toggle dropdown-title dropdown-item-custom"
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                                Мощные
+                                                <p class="nav-item-comment">Премиальные решения для 2K / 4K</p>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Alpha
+                                                        <p class="nav-item-comment">На базе RTX 2060 Super / 2070 Super</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Gamma
+                                                        <p class="nav-item-comment">На базе RTX 2080 Super / 2080Ti</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Delta
+                                                        <p class="nav-item-comment">На базе RTX 3050Ti / 3060Ti</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item dropdown-item-all" href="#">Смотреть все модели</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropend">
+                                            <a href="#" class="dropdown-item dropdown-toggle dropdown-title dropdown-item-custom"
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                                Кастомные
+                                                <p class="nav-item-comment">Эксклюзивные варианты с водяным охлаждением</p>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Sigma
+                                                        <p class="nav-item-comment">Врожденное превосходство</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Kappa
+                                                        <p class="nav-item-comment">На стыке инноваций и искусства</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Lambda
+                                                        <p class="nav-item-comment">Где мастерство встречает совершенство</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item dropdown-item-all" href="#">Смотреть все модели</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item dropend">
+                                            <a href="#" class="dropdown-item dropdown-toggle dropdown-title dropdown-item-custom"
+                                            data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                                Ноутбуки
+                                                <p class="nav-item-comment">Мощные премиум решения</p>
+                                            </a>
+                                            <ul class="dropdown-menu dropdown-menu-end">
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Omega
+                                                        <p class="nav-item-comment">На базе RTX 3050 / 3050Ti / 3060</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Zeta
+                                                        <p class="nav-item-comment">На базе RTX 2060 / 2070 / 2080 Super</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="dropdown-item dropdown-item-last">
+                                                        Omicron
+                                                        <p class="nav-item-comment">На базе GTX 1650 / 1660 / 1650Ti / 1660Ti</p>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item dropdown-item-all" href="#">Смотреть все модели</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">В наличии</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Конфигуратор</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Оплата и доставка</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Поддержка</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">О нас</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="d-block d-lg-none">
+                        <button class="btn p-1" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="badge text-bg-dark cart-badge bg-dark rounded-circle">16</span>
+                        </button>
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+
+        <main class="main series-bg">
+
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="breadcrumbs custom-breadcrumbs">
+                            <ul>
+                                <li><a href="/templates/home.html">Главная</a></li>
+                                <li><a href="/mcshop/templates/mcshop/all_models.html">В наличии</a></li>
+                                <li><a href="/mcshop/templates/mcshop/pc_models_pages/powerful.html">Мощные</a></li>
+                                <li><span>Lambda</span></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                
+                <div class="row gy-3 items">
+                            
+                    <div class="sub-product-card col-md-6 col-sm-12">
+                        <div class="section-title ">
+                            <h4><span>Lambda 1</span></h4>
+                        </div>
+                        <div class="item product-card-detail">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+            
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-md-6 col-sm-12">
+                        <div class="section-title ">
+                            <h4><span>Lambda 3</span></h4>
+                        </div>
+                        <div class="item product-card-detail">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+            
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-md-6 col-sm-12">
+                        <div class="section-title ">
+                            <h4><span>Lambda 5</span></h4>
+                        </div>
+                        <div class="item product-card-detail">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+            
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12">
+                        <div class="section-title ">
+                            <h4><span>Lambda 7</span></h4>
+                        </div>
+                        <div class="item product-card-detail">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+            
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <section class="new-products">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h3 class="section-title">
+                                <span>С этим товаром сравнивают</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-carousel-full">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\2.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\3.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\4.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="\static\images\computer_images\5.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            
+        </main>
+        
+        <footer class="footer bg-dark" data-bs-theme="dark">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-3 col-6">
+                        <h4>Информация</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">Оплата</a></li>
+                            <li><a href="#">Доставка</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Рабочие часы</h4>
+                        <ul class="list-unstyled">
+                            <li>Набережные Челны, пр. Мира, 68/19</li>
+                            <li>Пн-Пт: 9:00 - 18:00</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Контакты</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="tel:+78552396660">+7 (855)-239-66-60</a></li>
+                            <li><a href="tel:+79885463233">+7 (988)-546-32-33</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Соцсети</h4>
+                        <ul class="footer-icons">
+                            <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <button id="top">
+        <i class="fa-solid fa-angles-up"></i>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,391 @@
+{% extends 'base_generic.html' %}
+
+{{ title }}
+
+{% block main %}
+            <div id="carousel" class="carousel slide carousel-fade">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-item active">
+                            <img src="/static/images/carousel-img-1.jpg" class="d-block w-100" alt="Тематическое изображение технологий">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/carousel-img-2.jpg" class="d-block w-100" alt="Изображение в контексте обширного опыта работы">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="/static/images/carousel-img-3.jpg" class="d-block w-100" alt="Изображение с геолокацией предприятия">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Пред.</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">След.</span>
+                </button>
+            </div>
+
+            <section class="advantages">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Наши преимущества</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row gy-3 items">
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="item">
+                                <p><i class="fa-solid fa-star"></i></p>
+                                <p>У нас только самые лучшие комплектующие</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="item">
+                                <p><i class="fa-solid fa-user-graduate"></i></p>
+                                <p>Сборкой ваших компьютеров занимаются профессионалы</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="item">
+                                <p><i class="fa-solid fa-gears"></i></p>
+                                <p>Каждый компьютер проходит тщательное тестирование</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="item">
+                                <p><i class="fa-solid fa-box"></i></p>
+                                <p>Все товары мы надежно упаковываем</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-products">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Популярные товары</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="owl-carousel owl-theme owl-carousel-full col-lg-3 col-md-4 col-sm-6 mb-3">
+                            <div class="product-card">
+                                <div class="product-thumb">
+                                    <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                                </div>
+
+                                <div class="product-details">
+                                    <h4>
+                                        <a href="#">Путевка с привилегиями</a>
+                                    </h4>
+                                    <p class="product-excerpt">Эксклюзивное предложение!</p>
+                                    <div class="product-bottom-details d-flex justify-content-between">
+                                        <div class="product-price">
+                                            <small class="banned-price">82000₽</small>
+                                            76800₽
+                                        </div>
+                                        <div class="product-links">
+                                            <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-thumb">
+                                    <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                                </div>
+
+                                <div class="product-details">
+                                    <h4>
+                                        <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                    </h4>
+                                    <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                    <div class="product-bottom-details d-flex justify-content-between">
+                                        <div class="product-price">
+                                            <small class="banned-price">82000₽</small>
+                                            76800₽
+                                        </div>
+                                        <div class="product-links">
+                                            <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-thumb">
+                                    <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                                </div>
+
+                                <div class="product-details">
+                                    <h4>
+                                        <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                    </h4>
+                                    <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                    <div class="product-bottom-details d-flex justify-content-between">
+                                        <div class="product-price">
+                                            <small class="banned-price">82000₽</small>
+                                            76800₽
+                                        </div>
+                                        <div class="product-links">
+                                            <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card">
+                                <div class="product-thumb">
+                                    <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                                </div>
+
+                                <div class="product-details">
+                                    <h4>
+                                        <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                    </h4>
+                                    <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                    <div class="product-bottom-details d-flex justify-content-between">
+                                        <div class="product-price">
+                                            <small class="banned-price">82000₽</small>
+                                            76800₽
+                                        </div>
+                                        <div class="product-links">
+                                            <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="new-products">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Новинки</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-carousel-full">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="#">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="about-us">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h2 class="section-title">
+                                <span>О нас</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam voluptatum soluta pariatur? Inventore, eum doloremque?</p>
+                            <p>Cum voluptates harm quo sequi voluptatem ratione laborum. Perspiciatis illum numquam assumenda modi. Sit, itaque?</p>
+                            <p>Reprehenderit illum, consectetur, quaerat fugit repellat soluta perspiciatis sit minima cum debitis voluptate praesentium quo!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="location-main">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1477.3084515639696!2d52.41721326210224!3d55.74708674945904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e01ee6b9ee61d1%3A0x60346238f953fb05!2z0JjQvdC20LXQvdC10YDQvdC-LdGN0LrQvtC90L7QvNC40YfQtdGB0LrQuNC5INC60L7Qu9C70LXQtNC2!5e0!3m2!1sru!2sru!4v1696084183758!5m2!1sru!2sru" width="100%" height="600" style="border:0; display: block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+{% endblock %}
+
+

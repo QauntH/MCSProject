@@ -1,0 +1,608 @@
+{% extends 'mcshop/pc_models_pages/base.html' %}
+{% load static %}
+
+
+{% block series_name %}Ноутбуки{% endblock %}
+{% block responsive_series_name %}ИГРОВЫЕ НОУТБУКИ{% endblock %}
+{% block responsive_p %}Мощные модели игровых ноутбуков, оснащенные передовыми технологиями и высокоэффективными
+    процессорами, являются отличным выбором для тех, кому важно сочетание мобильности и
+    производительности в одном устройстве{% endblock %}
+{% block series_styles %}
+
+    .responsive {
+        background-image: url({% static 'images/notebooks-background.jpg' %});
+    }
+
+    @media (max-width: 991.98px) {
+        .responsive {
+            height: 800px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .responsive {
+            height: 600px;
+        }
+    }
+
+    .text-responsive {
+        margin-bottom: 0px;
+    }
+
+{% endblock %}
+
+{% block product-content %}
+    <div class="notebook-image text-center">
+        <picture>
+            <img src="{% static 'images/notebook-page-banner.png' %}" style="aspect-ratio: auto 1239 / 699" alt="1">
+        </picture>
+    </div>
+{% endblock %}
+
+{% block content %}
+            <section class="model_sigma">
+                <div class="container">
+                    <div class="row mb-3">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Sigma</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-carousel-full">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="model_kappa">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Kappa</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-carousel-full">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="model_lambda">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Серия Lambda</span>
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="owl-carousel owl-theme owl-carousel-full">
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-thumb">
+                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
+                            </div>
+
+                            <div class="product-details">
+                                <h4>
+                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
+                                </h4>
+                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
+                                <div class="product-bottom-details d-flex justify-content-between">
+                                    <div class="product-price">
+                                        <small class="banned-price">82000₽</small>
+                                        76800₽
+                                    </div>
+                                    <div class="product-links">
+                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+{% endblock %}
+
+
