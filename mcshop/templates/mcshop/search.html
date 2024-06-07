@@ -1,0 +1,135 @@
+{% extends 'mcshop/pc_series_pages/base.html' %}
+{% load static %}
+
+{% block title %}Alpha{% endblock %}
+{% block url_series %}{% url 'mcshop:powerful' %}{% endblock %}
+{% block series_name %}Мощные{% endblock %}
+{% block model_name %}Alpha{% endblock %}
+
+{% block content %}
+            <section class="search-section">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-12 mb">
+                            <h2 class="section-title">
+                                <span>Результаты по запросу "{{ query }}"</span>
+                            </h2>
+                        </div>
+                    </div>
+
+            {% if results %}
+                <div class="model-cards row" style="padding-top: 15px">
+                        {% for product in results %}
+                            <div class="alpha col-md-4 col-sm-6 col-12">
+                            <div id="carouselAlpha" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ product.image.url }}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - {{ product.avg_fps }}
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming justify-content-start col-8">
+                                    {{ product.name }}
+                                </div>
+                                <div class="card-price d-flex justify-content-end col-4">
+                                    Цена {{ product.price }} ₽
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-start">
+                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                        Подробнее
+                                    </a>
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    {{ product.description }}
+                                </div>
+{#                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">#}
+{#                                    <button class="btn btn-dark">#}
+{#                                        <i class="fa-solid fa-gear"></i>#}
+{#                                        <a class="cards-anchor" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                    </button>#}
+{#                                </div>#}
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.graphic_card }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.processor }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.motherboard }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ram }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ssd }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.power_unit }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+            {% else %}
+                <h2>Ничего не найдено</h2>
+            {% endif %}
+                </div>
+            </section>
+{% endblock %}

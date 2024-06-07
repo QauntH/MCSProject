@@ -74,26 +74,6 @@
                                         </ul>
                                     </div>
                                 </div>
-
-                                <!--
-                                <div class="btn-group">
-                                    <div class="dropdown">
-                                        <button class="btn btn-sm dropdown-toggle" type="button"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                            RU
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="dropdown-item" href="#">EN</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="#">FR</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                -->
-
                             </div>
                         </div>
                     </div>
@@ -116,15 +96,10 @@
                         </div>
 
                         <div class="col-lg-4 col-sm-6 order-md-1 mt-2 mt-md-0">
-                            <form action="">
+                            <form action="{% url 'mcshop:search' %}">
                                 <div class="input-group">
-                                    <input type="text" class="form-control"
-                                    name="search"
-                                    placeholder="Поиск..."
-                                    aria-label="Поиск..."
-                                    aria-describedby="button-search">
-                                    <button class="btn btn-outline-dark"
-                                    type="submit" id="button-search">
+                                    <input type="text" class="form-control" name="q" placeholder="Поиск...">
+                                    <button class="btn btn-outline-dark" type="submit" id="button-search">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
                                 </div>

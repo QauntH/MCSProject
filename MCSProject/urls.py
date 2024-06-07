@@ -25,6 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mcshop.urls', namespace='mcshop')),
     path('user/', include('mcuser.urls', namespace='mcuser')),
+
 ]
 
 if settings.DEBUG:

@@ -1,15 +1,45 @@
 from django.shortcuts import render
+from django.db.models import Q
 
 from mcshop.models import *
 
 
 def base_generic(request):
-    categories = Categories.objects.all().prefetch_related('models')
-
     context = {
-        'categories': categories,
+        'title': 'Шаблон'
     }
     return render(request, 'base_generic.html', context)
+
+
+def search(request):
+    query = request.GET.get('q')
+    if query:
+        results = Products.objects.filter(
+            Q(name__icontains=query) | Q(description__icontains=query) | Q(graphic_card__icontains=query) |
+            Q(processor__icontains=query) | Q(motherboard__icontains=query) | Q(ssd__icontains=query) |
+            Q(ram__icontains=query) | Q(pc_case__icontains=query) | Q(power_unit__icontains=query)
+        )
+    else:
+        results = Products.objects.none()
+
+    context = {
+        'results': results,
+        'query': query,
+    }
+    # if category_slug == 'all':
+    #     mcshop = Products.objects.all()
+    # else:
+    #     mcshop = get_object_or_404(Products.objects.filter(category_slug=category_slug))
+    #
+    # paginator = Paginator(mcshop, 6)
+    # current_page = paginator.page(1)
+    #
+    # context = {
+    #     'title': 'Главная - Поиск',
+    #     'mcshop': current_page,
+    # }
+
+    return render(request, 'mcshop/search.html', context)
 
 
 def home(request):
