@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}Beta{% endblock %}
-{% block url_series %}{% url 'optimal' %}{% endblock %}
+{% block url_series %}{% url 'mcshop:optimal' %}{% endblock %}
 {% block series_name %}Оптимальные{% endblock %}
 {% block model_name %}Beta{% endblock %}
 
@@ -53,40 +53,35 @@
                         </div>
                     </section>
 
-                    <div class="beta-cards row" style="padding-top: 15px">
-                        <div class="beta standard col-md-4 col-sm-6 col-12">
-                            <div id="carouselBetaStandard" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselBetaStandard" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carouselBetaStandard" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carouselBetaStandard" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
+                    <div class="model-cards row" style="padding-top: 15px">
+                        {% for product in products %}
+                            <div class="beta col-md-4 col-sm-6 col-12">
+                            <div id="carouselBeta" class="carousel slide">
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
+                                        <img src="{{ product.image.url }}" class="d-block w-100" alt="1">
                                     </div>
                               </div>
                             </div>
                             <div class="avg-fps-bar mt-2">
                                 <div class="avg-fps-value">
-                                    AVG.FPS - 85
+                                    AVG.FPS - {{ product.avg_fps }}
                                 </div>
-                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
-                                    <div class="progress-bar" style="width: 33%"></div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
                                 </div>
                             </div>
                             <div class="card-series-title row">
-                                <div class="card-naming col-12">
-                                    BETA STANDARD
+                                <div class="card-naming justify-content-start col-8">
+                                    {{ product.name }}
                                 </div>
-                                <div class="card-price d-flex justify-content-start col-6">
-                                    Цена 72800 ₽
+                                <div class="card-price d-flex justify-content-end col-4">
+                                    Цена {{ product.price }} ₽
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-start">
+                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                        Подробнее
+                                    </a>
                                 </div>
                                 <div class="product-add2cart col-6 d-flex justify-content-end">
                                     <button class="btn btn-dark">
@@ -98,20 +93,14 @@
                             <div class="card-series-main mt-3 row">
 
                                 <div class="card-description-main col-12">
-                                    Игровая платформа, построенная на базе процессора Intel® Core™ i3-13100(F)
-                                    [до 4.5GHz, 4 ядер] и видеокарты GeForce GTX 1070Ti Dual [8GB, 3072 CUDA].
+                                    {{ product.description }}
                                 </div>
-                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
-                                    <button class="btn btn-dark">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
-                                    </button>
-                                </div>
-                                <div class="details-button col-6 d-flex justify-content-end pt-5">
-                                    <button class="btn btn-dark">
-                                        Подробнее
-                                    </button>
-                                </div>
+{#                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">#}
+{#                                    <button class="btn btn-dark">#}
+{#                                        <i class="fa-solid fa-gear"></i>#}
+{#                                        <a class="cards-anchor" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                    </button>#}
+{#                                </div>#}
                             </div>
                             <div class="card-series-description">
                                 <div class="card custom-card my-3">
@@ -123,7 +112,7 @@
                                                         <span>Видеокарта:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        GTX 1070Ti [8GB, 3072 CUDA]
+                                                        {{ product.graphic_card }}
                                                     </div>
                                                 </li>
                                                 <li class="list-elements">
@@ -131,7 +120,7 @@
                                                         <span>Процессор:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        Intel® Core™ i3-13100(F) [до 4.5GHz, 4 ядра]
+                                                        {{ product.processor }}
                                                     </div>
                                                 </li>
                                                 <li class="list-elements">
@@ -139,7 +128,7 @@
                                                         <span>Материнская плата:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        MSI PRO B760M-G [DDR4]
+                                                        {{ product.motherboard }}
                                                     </div>
                                                 </li>
                                                 <li class="list-elements">
@@ -147,7 +136,7 @@
                                                         <span>Оперативная память:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        16GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
+                                                        {{ product.ram }}
                                                     </div>
                                                 </li>
                                                 <li class="list-elements">
@@ -155,7 +144,7 @@
                                                         <span>SSD накопитель:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        512GB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
+                                                        {{ product.ssd }}
                                                     </div>
                                                 </li>
                                                 <li class="list-elements">
@@ -163,7 +152,7 @@
                                                         <span>Блок питания:</span>
                                                     </div>
                                                     <div class="card-description">
-                                                        500W Deepcool PK500D [80+ Bronze]
+                                                        {{ product.power_unit }}
                                                     </div>
                                                 </li>
                                             </ul>
@@ -171,240 +160,7 @@
                                     </div>
                             </div>
                         </div>
-                        <div class="beta vip col-md-4 col-sm-6 col-12">
-                            <div id="carouselBetaVip" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselBetaVip" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carouselBetaVip" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carouselBetaVip" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                              </div>
-                            </div>
-                            <div class="avg-fps-bar mt-2">
-                                <div class="avg-fps-value">
-                                    AVG.FPS - 92
-                                </div>
-                                <div class="progress" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
-                                    <div class="progress-bar" style="width: 44%"></div>
-                                </div>
-                            </div>
-                            <div class="card-series-title row">
-                                <div class="card-naming col-12">
-                                    BETA VIP
-                                </div>
-                                <div class="card-price d-flex justify-content-start col-6">
-                                    Цена 78800 ₽
-                                </div>
-                                <div class="product-add2cart col-6 d-flex justify-content-end">
-                                        <button class="btn btn-dark">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                            В корзину
-                                        </button>
-                                </div>
-                            </div>
-                            <div class="card-series-main mt-3 row">
-
-                                <div class="card-description-main col-12">
-                                    Игровая платформа, построенная на базе процессора Intel® Core™ i5-10400(F)
-                                    [до 4.2GHz, 8 ядер] и видеокарты GeForce GTX 1070Ti Dual [6GB, 3072 CUDA].
-                                </div>
-                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
-                                    <button class="btn btn-dark">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
-                                    </button>
-                                </div>
-                                <div class="details-button col-6 d-flex justify-content-end pt-5">
-                                    <button class="btn btn-dark">
-                                        Подробнее
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card-series-description">
-                                <div class="card custom-card my-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Комплектующие</h5>
-                                            <ul class="list-unstyled">
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Видеокарта:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        GTX 1070Ti [6GB, 3072 CUDA]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Процессор:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        Intel® Core™ i5-10400(F) [до 4.2GHz, 8 ядра]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Материнская плата:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        MSI PRO B760M-G [DDR4]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Оперативная память:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        16GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>SSD накопитель:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        512GB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Блок питания:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        500W Deepcool PK500D [80+ Bronze]
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="beta premium col-md-4 col-sm-6 col-12">
-                            <div id="carouselBetaPremium" class="carousel slide">
-                                <div class="carousel-indicators">
-                                    <button type="button" data-bs-target="#carouselBetaPremium" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                    <button type="button" data-bs-target="#carouselBetaPremium" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                    <button type="button" data-bs-target="#carouselBetaPremium" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                </div>
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src="{% static 'images/computer_images/1.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/2.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img src="{% static 'images/computer_images/3.jpg' %}" class="d-block w-100" alt="1">
-                                    </div>
-                              </div>
-                            </div>
-                            <div class="avg-fps-bar mt-2">
-                                <div class="avg-fps-value">
-                                    AVG.FPS - 102
-                                </div>
-                                <div class="progress" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="height: 1.5px; --bs-progress-bar-bg: #712cf9">
-                                    <div class="progress-bar" style="width: 55%"></div>
-                                </div>
-                            </div>
-                            <div class="card-series-title row">
-                                <div class="card-naming col-12">
-                                    BETA PREMIUM
-                                </div>
-                                <div class="card-price d-flex justify-content-start col-6">
-                                    Цена 84800 ₽
-                                </div>
-                                <div class="product-add2cart col-6 d-flex justify-content-end">
-                                        <button class="btn btn-dark">
-                                            <i class="fa-solid fa-cart-shopping"></i>
-                                            В корзину
-                                        </button>
-                                </div>
-                            </div>
-                            <div class="card-series-main mt-3 row">
-
-                                <div class="card-description-main col-12">
-                                    Игровая платформа, построенная на базе процессора Intel® Core™ i5-12400(F)
-                                    [до 4.4GHz, 6 ядер] и видеокарты GeForce GTX 1080Ti Dual [8GB, 3072 CUDA].
-                                </div>
-                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">
-                                    <button class="btn btn-dark">
-                                        <i class="fa-solid fa-gear"></i>
-                                        <a class="cards-anchor" href="{% url 'configurator' %}">Конфигуратор</a>
-                                    </button>
-                                </div>
-                                <div class="details-button col-6 d-flex justify-content-end pt-5">
-                                    <button class="btn btn-dark">
-                                        Подробнее
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="card-series-description">
-                                <div class="card custom-card my-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Комплектующие</h5>
-                                            <ul class="list-unstyled">
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Видеокарта:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        GTX 1080Ti [8GB, 3072 CUDA]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Процессор:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        Intel® Core™ i5-12400(F) [до 4.5GHz, 4 ядра]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Материнская плата:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        MSI PRO B760M-G [DDR4]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Оперативная память:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        16GB ADATA XPG SPECTRIX D50 RGB Black [DDR4, 3600MHz, 2x8GB]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>SSD накопитель:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        1TB ADATA XPG SX8200 Pro [3350MB/s, Gen3]
-                                                    </div>
-                                                </li>
-                                                <li class="list-elements">
-                                                    <div class="card-teaser">
-                                                        <span>Блок питания:</span>
-                                                    </div>
-                                                    <div class="card-description">
-                                                        500W Deepcool PK500D [80+ Bronze]
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     <section class="advantages" style="background-color: var(--bg-color);">

@@ -66,10 +66,10 @@
                                         </button>
                                         <ul class="dropdown-menu">
                                             <li>
-                                                <a class="dropdown-item" href="{% url 'login' %}">Вход</a>
+                                                <a class="dropdown-item" href="{% url 'mcuser:login' %}">Вход</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item" href="{% url 'register' %}">Регистрация</a>
+                                                <a class="dropdown-item" href="{% url 'mcuser:register' %}">Регистрация</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -104,7 +104,7 @@
                     <div class="row align-items-center">
 
                         <div class="col-sm-6 col-lg-4">
-                            <a href="{% url 'home' %}" class="header-logo h2">ComputerShop</a>
+                            <a href="{% url 'mcshop:home' %}" class="header-logo h2">ComputerShop</a>
                         </div>
 
                         <div class="col-lg-4 order-md-2 cart-buttons text-end d-none d-lg-block">
@@ -177,8 +177,8 @@
                     </div>
 
                     <div class="text-end mt-3">
-                        <a href="{% url 'cart' %}" class="btn btn-outline-dark">Корзина</a>
-                        <a href="{% url 'checkout' %}" class="btn btn-outline-dark">К оплате</a>
+                        <a href="{% url 'mcshop:cart' %}" class="btn btn-outline-dark">Корзина</a>
+                        <a href="{% url 'mcshop:checkout' %}" class="btn btn-outline-dark">К оплате</a>
                     </div>
 
                 </div>
@@ -202,13 +202,13 @@
                         <div class="offcanvas-body">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+                                    <a class="nav-link active" aria-current="page" href="{% url 'mcshop:home' %}">Главная</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false"
                                     data-bs-auto-close="outside">
-                                        Модели
+                                        Категории
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item dropend">
@@ -219,19 +219,19 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a href="{% url 'beta' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:beta' %}" class="dropdown-item dropdown-item-last">
                                                         Beta
                                                         <p class="nav-item-comment">На базе GTX 1660 SUPER / 1660Ti</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'upsilon' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:upsilon' %}" class="dropdown-item dropdown-item-last">
                                                         Upsilon
                                                         <p class="nav-item-comment">На базе RTX 2060 / 2060 SUPER</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'theta' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:theta' %}" class="dropdown-item dropdown-item-last">
                                                         Theta
                                                         <p class="nav-item-comment">На базе RTX 2070 / 2070 SUPER</p>
                                                     </a>
@@ -240,7 +240,7 @@
                                                     <hr class="dropdown-divider">
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'optimal' %}">Смотреть все модели</a>
+                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'mcshop:optimal' %}">Смотреть все модели</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -252,19 +252,19 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a href="{% url 'alpha' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:alpha' %}" class="dropdown-item dropdown-item-last">
                                                         Alpha
                                                         <p class="nav-item-comment">На базе RTX 2080 / 2080 SUPER / 2080Ti</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'gamma' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:gamma' %}" class="dropdown-item dropdown-item-last">
                                                         Gamma
                                                         <p class="nav-item-comment">На базе RTX 3050 / 3060 / 3070</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'delta' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:delta' %}" class="dropdown-item dropdown-item-last">
                                                         Delta
                                                         <p class="nav-item-comment">На базе RTX 3070Ti / 3080Ti / 3090Ti</p>
                                                     </a>
@@ -273,7 +273,7 @@
                                                     <hr class="dropdown-divider">
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'powerful' %}">Смотреть все модели</a>
+                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'mcshop:powerful' %}">Смотреть все модели</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -285,19 +285,19 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a href="{% url 'sigma' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:sigma' %}" class="dropdown-item dropdown-item-last">
                                                         Sigma
                                                         <p class="nav-item-comment">Врожденное превосходство</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'kappa' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:kappa' %}" class="dropdown-item dropdown-item-last">
                                                         Kappa
                                                         <p class="nav-item-comment">На стыке инноваций и искусства</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'lambda' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:lambda' %}" class="dropdown-item dropdown-item-last">
                                                         Lambda
                                                         <p class="nav-item-comment">Где мастерство встречает совершенство</p>
                                                     </a>
@@ -306,7 +306,7 @@
                                                     <hr class="dropdown-divider">
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'custom' %}">Смотреть все модели</a>
+                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'mcshop:custom' %}">Смотреть все модели</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -318,41 +318,41 @@
                                             </a>
                                             <ul class="dropdown-menu dropdown-menu-end">
                                                 <li>
-                                                    <a href="{% url 'omega' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:omega' %}" class="dropdown-item dropdown-item-last">
                                                         Omega
-                                                        <p class="nav-item-comment">На базе GTX 1650Ti / 1660Ti / 1660Ti Super</p>
+                                                        <p class="nav-item-comment">На базе RTX 3070 / 3070Ti / 3080</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'zeta' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:zeta' %}" class="dropdown-item dropdown-item-last">
                                                         Zeta
-                                                        <p class="nav-item-comment">На базе RTX 2070 / 2070Ti / 2080Ti</p>
+                                                        <p class="nav-item-comment">На базе RTX 2050 / 2060 / 3050</p>
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{% url 'omicron' %}" class="dropdown-item dropdown-item-last">
+                                                    <a href="{% url 'mcshop:omicron' %}" class="dropdown-item dropdown-item-last">
                                                         Omicron
-                                                        <p class="nav-item-comment">На базе RTX 3050 / 3050Ti / 3060Ti</p>
+                                                        <p class="nav-item-comment">На базе GTX 1650Ti / 1660Ti / 1660Ti Super</p>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <hr class="dropdown-divider">
                                                 </li>
                                                 <li>
-                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'notebook' %}">Смотреть все модели</a>
+                                                    <a class="dropdown-item dropdown-item-all" href="{% url 'mcshop:notebook' %}">Смотреть все модели</a>
                                                 </li>
                                             </ul>
                                         </li>
                                     </ul>
                                 </li>
+{#                                <li class="nav-item">#}
+{#                                    <a class="nav-link" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                </li>#}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'configurator' %}">Конфигуратор</a>
+                                    <a class="nav-link" href="{% url 'mcuser:pay' %}">Оплата и доставка</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'pay' %}">Оплата и доставка</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'support' %}">Поддержка</a>
+                                    <a class="nav-link" href="{% url 'mcuser:support' %}">Поддержка</a>
                                 </li>
                             </ul>
                         </div>
@@ -383,19 +383,19 @@
                     <div class="col-md-3 col-6">
                         <h4>Основное</h4>
                         <ul class="list-unstyled">
-                            <li><a href="{% url 'home' %}">Главная</a></li>
-                            <li><a href="{% url 'configurator' %}">Конфигуратор</a></li>
-                            <li><a href="{% url 'profile' %}">Профиль</a></li>
-                            <li><a href="{% url 'configurator' %}">Корзина</a></li>
+                            <li><a href="{% url 'mcshop:home' %}">Главная</a></li>
+{#                            <li><a href="{% url 'mcshop:configurator' %}">Конфигуратор</a></li>#}
+                            <li><a href="{% url 'mcuser:profile' %}">Профиль</a></li>
+                            <li><a href="{% url 'mcshop:cart' %}">Корзина</a></li>
                         </ul>
                     </div>
 
                     <div class="col-md-3 col-6">
                         <h4>Поддержка</h4>
                         <ul class="list-unstyled">
-                            <li><a href="/">Задать нам вопрос</a></li>
-                            <li><a href="{% url 'pay' %}">Оплата и доставка</a></li>
-                            <li><a href="/">Публичная оферта</a></li>
+                            <li><a href="{% url 'mcuser:support' %}">Задать нам вопрос</a></li>
+                            <li><a href="{% url 'mcuser:pay' %}">Оплата и доставка</a></li>
+                            <li><a href="{% url 'mcuser:public_offer' %}">Публичная оферта</a></li>
                             <li><a href="/">Copyright</a></li>
                         </ul>
                     </div>

@@ -353,11 +353,21 @@ ul.social-icons a:hover {
 
 .carousel-caption {
     text-shadow: 0 0 2px rgba(0, 0, 0, .9);
-    text-align: left;
+}
+
+.carousel-custom-responsive img{
+
+}
+
+.carousel-image {
+    object-fit: cover; /* cover the container without distortion */
 }
 
 .carousel-inner {
     background-color: #171717;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .custom-carousel .carousel-control-prev-icon,
@@ -588,13 +598,19 @@ ul.social-icons a:hover {
 }
 
 .card-price {
+    padding-top: 5px;
     color: #232323;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 .card-naming {
     font-size: 1.6rem;
     color: black;
+    text-transform: uppercase;
+}
+
+.model-cards {
+    padding: 12px 12px 0 12px;
 }
 
 .card-description-main {
@@ -602,6 +618,12 @@ ul.social-icons a:hover {
     width: 97%;
     font-size: 1rem;
     border-top: 1px solid var(--contrast-color);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 7.5em;
 }
 
 .custom-card {
@@ -633,11 +655,11 @@ ul.social-icons a:hover {
 }
 
 .form-select {
-    border-radius: 0.375rem!important;
+    border-radius: 0!important;
 }
 
 .form-select:focus {
-    border-radius: 0.375rem!important;
+    border-radius: 0!important;
 }
 
 .configurator-menu {
@@ -706,7 +728,7 @@ ul.social-icons a:hover {
 }
 
 .product-details h4 a {
-    height: 45px;
+    height: 20px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -764,7 +786,7 @@ ul.social-icons a:hover {
     display: -webkit-box;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
-    height: 45px;
+    height: 70px;
 }
 
 .product-bottom-details {

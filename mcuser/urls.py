@@ -1,9 +1,13 @@
 from django.urls import path
 from . import views
 
+app_name = 'mcuser'
+
 urlpatterns = [
     path('login/', views.login, name='login'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
-    path('order_history/', views.order_history, name='order_history'),
+    path('pay-delivery/', views.payment_delivery_info, name='pay'),
+    path('support/', views.support, name='support'),
+    path('public_offer/', views.public_offer, name='public_offer')
 ]

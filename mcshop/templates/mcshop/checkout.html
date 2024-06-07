@@ -21,8 +21,8 @@ fetch('/static/js/countries.json')
                     <div class="col-12">
                         <nav class="breadcrumbs">
                             <ul>
-                                <li><a href="\templates\home.html">Главная</a></li>
-                                <li><a href="\mcshop\templates\mcshop\cart.html">Корзина</a></li>
+                                <li><a href="{% url 'mcshop:home' %}">Главная</a></li>
+                                <li><a href="{% url 'mcshop:cart' %}">Корзина</a></li>
                                 <li><span>Оплата</span></li>
                             </ul>
                         </nav>
@@ -50,7 +50,7 @@ fetch('/static/js/countries.json')
 
                                     <div class="col-md-6">
                                         <input type="email" name="email" id="email" class="form-control"
-                                        placeholder="Электроннная почта" aria-label="Email">
+                                        placeholder="Электронная почта" aria-label="Email">
                                     </div>
 
                                     <div class="col-md-6">
@@ -59,7 +59,7 @@ fetch('/static/js/countries.json')
                                     </div>
 
                                     <div class="col-md-6">
-                                        <select class="form-select" id="country" aria-placeholder="Страна" name="country" aria-label="Country" required>
+                                        <select class="form-select" id="country" name="country" aria-label="Country" required>
 
                                         </select>
                                     </div>
@@ -74,8 +74,8 @@ fetch('/static/js/countries.json')
                                         placeholder="Улица, дом, квартира" aria-label="City" required>
                                     </div>
 
-                                    <div class="col">
-                                        <textarea class="form-control" id="comment" cols="" rows="2" placeholder="Комментарий к заказу..."></textarea>
+                                    <div class="col-12">
+                                        <textarea class="form-control" id="comment" rows="4" placeholder="Комментарий к заказу..."></textarea>
                                     </div>
 
                                 </div>
@@ -101,28 +101,28 @@ fetch('/static/js/countries.json')
                                             <tr>
                                                 <td>
                                                     Product 1 Lorem ipsum, dolor sit amet consectetur adipisicing.
-                                                    <small>(65000Руб) x 1</small>
+                                                    <small>(65000₽) x 1</small>
                                                 </td>
-                                                <td class="text-end">65300Руб</td>
+                                                <td class="text-end">65300₽</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     Product 2 Lorem
-                                                    <small>(62000Руб) x 1</small>
+                                                    <small>(62000₽) x 1</small>
                                                 </td>
-                                                <td class="text-end">61300Руб</td>
+                                                <td class="text-end">61300₽</td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     Product 3
                                                     <small>(60000Руб) x 1</small>
                                                 </td>
-                                                <td class="text-end">66300Руб</td>
+                                                <td class="text-end">66300₽</td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="2" class="text-end">187000Руб</td>
+                                                <td colspan="2" class="text-end">187000₽</td>
                                             </tr>
                                         </tfoot>
                                     </table>

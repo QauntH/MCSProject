@@ -40,567 +40,382 @@
 {% endblock %}
 
 {% block content %}
-            <section class="model_sigma">
+            <section class="model_omicron">
                 <div class="container">
                     <div class="row mb-3">
                         <div class="col-12 mb">
                             <h2 class="section-title">
-                                <span>Серия Sigma</span>
+                                <span>Серия {{ omicron_series.name }}</span>
                             </h2>
+                            <div class="series-title m-1 p-4">
+                                <p>{{ omicron_series.description }}</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="owl-carousel owl-theme owl-carousel-full">
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
 
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
+                    <div class="model-cards row">
+                        {% for product in omicron_products %}
+                            <div class="omicron col-md-4 col-sm-6 col-12">
+                            <div id="carouselOmicron" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ product.image.url }}" class="d-block w-100" alt="1">
                                     </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - {{ product.avg_fps }}
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming justify-content-start col-8">
+                                    {{ product.name }}
+                                </div>
+                                <div class="card-price d-flex justify-content-end col-4">
+                                    Цена {{ product.price }} ₽
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-start">
+                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                        Подробнее
+                                    </a>
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
+                            <div class="card-series-main mt-3 row">
 
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
+                                <div class="card-description-main col-12">
+                                    {{ product.description }}
                                 </div>
+{#                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">#}
+{#                                    <button class="btn btn-dark">#}
+{#                                        <i class="fa-solid fa-gear"></i>#}
+{#                                        <a class="cards-anchor" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                    </button>#}
+{#                                </div>#}
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.graphic_card }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.processor }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.motherboard }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ram }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ssd }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.power_unit }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                             </div>
                         </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                 </div>
             </section>
 
-            <section class="model_kappa">
+            <section class="model_zeta">
                 <div class="container">
-                    <div class="row mb-5">
+                    <div class="row mb-3">
                         <div class="col-12 mb">
                             <h2 class="section-title">
-                                <span>Серия Kappa</span>
+                                <span>Серия {{ zeta_series.name }}</span>
                             </h2>
-                        </div>
-                    </div>
-
-                    <div class="owl-carousel owl-theme owl-carousel-full">
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
+                            <div class="series-title m-1 p-4">
+                                <p>{{ zeta_series.description }}</p>
                             </div>
                         </div>
                     </div>
 
+
+                    <div class="model-cards row">
+                        {% for product in zeta_products %}
+                            <div class="zeta col-md-4 col-sm-6 col-12">
+                            <div id="carouselZeta" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ product.image.url }}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - {{ product.avg_fps }}
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming justify-content-start col-8">
+                                    {{ product.name }}
+                                </div>
+                                <div class="card-price d-flex justify-content-end col-4">
+                                    Цена {{ product.price }} ₽
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-start">
+                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                        Подробнее
+                                    </a>
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    {{ product.description }}
+                                </div>
+{#                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">#}
+{#                                    <button class="btn btn-dark">#}
+{#                                        <i class="fa-solid fa-gear"></i>#}
+{#                                        <a class="cards-anchor" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                    </button>#}
+{#                                </div>#}
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.graphic_card }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.processor }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.motherboard }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ram }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ssd }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.power_unit }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </section>
 
-            <section class="model_lambda">
+            <section class="model_omega">
                 <div class="container">
-                    <div class="row mb-5">
+                    <div class="row mb-3">
                         <div class="col-12 mb">
                             <h2 class="section-title">
-                                <span>Серия Lambda</span>
+                                <span>Серия {{ omega_series.name }}</span>
                             </h2>
-                        </div>
-                    </div>
-
-                    <div class="owl-carousel owl-theme owl-carousel-full">
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="/mcshop/templates/mcshop/product_detail.html"><img src="/static/images/computer_images/1.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/2.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/3.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/4.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="product-card">
-                            <div class="product-thumb">
-                                <a href="#"><img src="/static/images/computer_images/5.jpg" alt="1"></a>
-                            </div>
-
-                            <div class="product-details">
-                                <h4>
-                                    <a href="/mcshop/templates/mcshop/product_detail.html">Product Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, blanditiis?</a>
-                                </h4>
-                                <p class="product-excerpt">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, eveniet!</p>
-                                <div class="product-bottom-details d-flex justify-content-between">
-                                    <div class="product-price">
-                                        <small class="banned-price">82000₽</small>
-                                        76800₽
-                                    </div>
-                                    <div class="product-links">
-                                        <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
-                                    </div>
-                                </div>
+                            <div class="series-title m-1 p-4">
+                                <p>{{ omega_series.description }}</p>
                             </div>
                         </div>
                     </div>
 
+
+                    <div class="model-cards row">
+                        {% for product in omega_products %}
+                            <div class="omega col-md-4 col-sm-6 col-12">
+                            <div id="carouselOmega" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="{{ product.image.url }}" class="d-block w-100" alt="1">
+                                    </div>
+                              </div>
+                            </div>
+                            <div class="avg-fps-bar mt-2">
+                                <div class="avg-fps-value">
+                                    AVG.FPS - {{ product.avg_fps }}
+                                </div>
+                                <div class="progress" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 2px; --bs-progress-bar-bg: #712cf9">
+                                    <div class="progress-bar" style="width: 44%"></div>
+                                </div>
+                            </div>
+                            <div class="card-series-title row">
+                                <div class="card-naming justify-content-start col-8">
+                                    {{ product.name }}
+                                </div>
+                                <div class="card-price d-flex justify-content-end col-4">
+                                    Цена {{ product.price }} ₽
+                                </div>
+                                <div class="details-button col-6 d-flex justify-content-start">
+                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                        Подробнее
+                                    </a>
+                                </div>
+                                <div class="product-add2cart col-6 d-flex justify-content-end">
+                                    <button class="btn btn-dark">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        В корзину
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-series-main mt-3 row">
+
+                                <div class="card-description-main col-12">
+                                    {{ product.description }}
+                                </div>
+{#                                <div class="product-add2config col-6 d-flex justify-content-start pt-5">#}
+{#                                    <button class="btn btn-dark">#}
+{#                                        <i class="fa-solid fa-gear"></i>#}
+{#                                        <a class="cards-anchor" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
+{#                                    </button>#}
+{#                                </div>#}
+                            </div>
+                            <div class="card-series-description">
+                                <div class="card custom-card my-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Комплектующие</h5>
+                                            <ul class="list-unstyled">
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Видеокарта:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.graphic_card }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Процессор:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.processor }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Материнская плата:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.motherboard }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Оперативная память:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ram }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>SSD накопитель:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.ssd }}
+                                                    </div>
+                                                </li>
+                                                <li class="list-elements">
+                                                    <div class="card-teaser">
+                                                        <span>Блок питания:</span>
+                                                    </div>
+                                                    <div class="card-description">
+                                                        {{ product.power_unit }}
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </section>
 {% endblock %}

@@ -2,20 +2,24 @@ from django.shortcuts import render
 
 
 def register(request):
-    # Ваш код для регистрации пользователя
-    return render(request, 'mcuser/register.html', {})
+    return render(request, 'mcuser/register.html')
 
 
 def login(request):
-    # Ваш код для входа пользователя
-    return render(request, 'mcuser/login.html', {})
+    return render(request, 'mcuser/login.html')
 
 
 def profile(request):
-    # Ваш код для отображения профиля пользователя
-    return render(request, 'mcuser/profile.html', {})
+    return render(request, 'mcuser/profile.html')
 
 
-def order_history(request):
-    # Ваш код для отображения истории заказов пользователя
-    return render(request, 'mcuser/order_history.html', {})
+def payment_delivery_info(request):
+    return render(request, 'mcuser/payment_delivery_info.html')
+
+
+def support(request):
+    return render(request, 'mcuser/support.html')
+
+
+def public_offer(request):
+    return render(request, 'mcuser/public_offer.html')

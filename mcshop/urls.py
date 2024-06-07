@@ -1,10 +1,12 @@
 from django.urls import path
 from . import views
 
+app_name = 'mcshop'
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('base_generic/', views.base_generic, name='base_generic'),
-    path('products/', views.product_detail, name='product_detail'),
+    path('products/<slug:product_slug>/', views.product_detail, name='product_detail'),
     path('cart/', views.cart, name='cart'),
     path('checkout/', views.checkout, name='checkout'),
     path('beta/', views.beta, name='beta'),
@@ -19,9 +21,7 @@ urlpatterns = [
     path('sigma/', views.sigma, name='sigma'),
     path('theta/', views.theta, name='theta'),
     path('zeta/', views.zeta, name='zeta'),
-    path('pay-delivery/', views.payment_delivery_info, name='pay'),
     path('configurator/', views.configurator, name='configurator'),
-    path('support/', views.support, name='support'),
     path('custom/', views.custom, name='custom'),
     path('notebooks/', views.notebook, name='notebook'),
     path('optimal/', views.optimal, name='optimal'),

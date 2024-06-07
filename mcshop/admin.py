@@ -7,26 +7,21 @@ class CategoriesAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
+@admin.register(Series)
+class SeriesAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug': ('name',)}
+
+
+class ProductsImageInline(admin.TabularInline):
+    model = ProductsImage
+    extra = 1
+
+
 @admin.register(Products)
 class ProductsAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
+    inlines = [ProductsImageInline]
 
-
-@admin.register(Optimal)
-class OptimalAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
-
-
-@admin.register(Powerful)
-class PowerfulAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
-
-
-@admin.register(Custom)
-class CustomAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
-
-
-@admin.register(Notebooks)
-class NotebooksAdmin(admin.ModelAdmin):
-    prepopulated_fields = {'slug': ('name',)}
+# @admin.register(PCModel)
+# class PCModelAdmin(admin.ModelAdmin):
+#     prepopulated_fields = {'slug': ('name',)}
