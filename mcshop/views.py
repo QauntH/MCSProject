@@ -23,6 +23,7 @@ def search(request):
         results = Products.objects.none()
 
     context = {
+        'title': 'Поиск по магазину',
         'results': results,
         'query': query,
     }
@@ -56,6 +57,7 @@ def beta(request):
     products = Products.objects.all().filter(name__contains='Beta')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия BETA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/beta.html', context)
@@ -65,6 +67,7 @@ def upsilon(request):
     products = Products.objects.all().filter(name__contains='Upsilon')
 
     context = {
+        'title': 'Интернет-магазин – Серия UPSILON',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/upsilon.html', context)
@@ -80,6 +83,7 @@ def custom(request):
     lambda_products = lambda_series.products.all()
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Категория CUSTOM',
         'sigma_series': sigma_series,
         'kappa_series': kappa_series,
         'lambda_series': lambda_series,
@@ -100,6 +104,7 @@ def notebook(request):
     omega_products = omega_series.products.all()
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Категория NOTEBOOKS',
         'omicron_series': omicron_series,
         'zeta_series': zeta_series,
         'omega_series': omega_series,
@@ -120,6 +125,7 @@ def optimal(request):
     upsilon_products = upsilon_series.products.all()
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Категория OPTIMAL',
         'beta_series': beta_series,
         'theta_series': theta_series,
         'upsilon_series': upsilon_series,
@@ -140,6 +146,7 @@ def powerful(request):
     delta_products = delta_series.products.all()
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Категория POWERFUL',
         'alpha_series': alpha_series,
         'gamma_series': gamma_series,
         'delta_series': delta_series,
@@ -154,6 +161,7 @@ def alpha(request):
     products = Products.objects.all().filter(name__contains='Alpha')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия ALPHA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/alpha.html', context)
@@ -163,6 +171,7 @@ def delta(request):
     products = Products.objects.all().filter(name__contains='Delta')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия DELTA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/delta.html', context)
@@ -172,6 +181,7 @@ def gamma(request):
     products = Products.objects.all().filter(name__contains='Gamma')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия GAMMA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/gamma.html', context)
@@ -181,6 +191,7 @@ def kappa(request):
     products = Products.objects.all().filter(name__contains='Kappa')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия KAPPA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/kappa.html', context)
@@ -190,6 +201,7 @@ def lambda_page(request):
     products = Products.objects.all().filter(name__contains='Lambda')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия LAMBDA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/lambda.html', context)
@@ -199,6 +211,7 @@ def omega(request):
     products = Products.objects.all().filter(name__contains='Omega')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия OMEGA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/omega.html', context)
@@ -208,6 +221,7 @@ def omicron(request):
     products = Products.objects.all().filter(name__contains='Omicron')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия OMICRON',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/omicron.html', context)
@@ -217,6 +231,7 @@ def sigma(request):
     products = Products.objects.all().filter(name__contains='Sigma')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия SIGMA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/sigma.html', context)
@@ -226,6 +241,7 @@ def theta(request):
     products = Products.objects.all().filter(name__contains='Theta')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия THETA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/theta.html', context)
@@ -235,6 +251,7 @@ def zeta(request):
     products = Products.objects.all().filter(name__contains='Zeta')
 
     context = {
+        'title': 'Интернет-магазин компьютеров – Серия ZETA',
         'products': products,
     }
     return render(request, 'mcshop/pc_series_pages/zeta.html', context)
@@ -246,6 +263,7 @@ def product_detail(request, product_slug):
     recommended = Products.objects.all().filter(price__gt=70000).filter(price__lt=90000).order_by('-price')
 
     context = {
+        'title': 'Интернет-магазин компьютеров',
         'products': products,
         'images': images,
         'recomended': recommended

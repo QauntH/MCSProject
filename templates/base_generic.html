@@ -13,6 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'images/site-emblem.png' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'images/site-emblem.png' %}" type="image/x-icon">
     <style>
         {% block series_styles %}{% endblock %}
     </style>
@@ -70,6 +72,9 @@
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="{% url 'mcuser:register' %}">Регистрация</a>
+                                            </li>
+                                            <li>
+                                                <a href="{% url 'mcuser:logout' %}" class="dropdown-item d-none">Выйти</a>
                                             </li>
                                         </ul>
                                     </div>

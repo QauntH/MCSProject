@@ -59,10 +59,10 @@
 
                             <p>{{ products.description }}</p>
                             
-                            <div class="row align-items-end">
+                            <div class="row">
                                 <div class="col-6 d-flex justify-content-start">
                                     <div class="product-prepare-info mb-3">
-                                        <a class="btn btn-dark" href="{% url 'mcuser:pay' %}">
+                                        <a class="btn btn-light" href="{% url 'mcuser:pay' %}">
                                             <i class="fa-regular fa-clock"></i>
                                             На заказ 3-4 дня
                                         </a>
@@ -71,7 +71,9 @@
                                 <div class="col-6 d-flex justify-content-end">
                                     <div class="product-add2cart mb-3">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" name="name" min="1" value="1">
+                                            <label class="d-none">
+                                                <input type="number" class="form-control" name="name" min="1" value="1">
+                                            </label>
                                             <button class="btn btn-dark">
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                                 В корзину

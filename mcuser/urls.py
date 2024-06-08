@@ -5,6 +5,7 @@ app_name = 'mcuser'
 
 urlpatterns = [
     path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
     path('pay-delivery/', views.payment_delivery_info, name='pay'),

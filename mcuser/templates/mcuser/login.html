@@ -25,20 +25,15 @@
 
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <form action="{% url 'mcuser:login' %}" method="post" class="needs-validation" novalidate>
+                                        {% csrf_token %}
                                         <div class="mb-3">
-                                            <label for="nickname" class="form-label">Ваше имя пользователя</label>
-                                            <input type="text" class="form-control" id="nickname" placeholder="Nickname" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Имя пользователя.
-                                            </div>
+                                            <label for="id_username" class="form-label">Имя пользователя</label>
+                                            <input type="text" class="form-control" value="{% if form.username.value %}{{ form.username.value }}{% endif %}" name="username" id="id_username" placeholder="Введите имя пользователя" required>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="password" class="form-label">Пароль</label>
-                                            <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Пароль.
-                                            </div>
+                                            <label for="id_password" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control" name="password" id="id_password" placeholder="Введите ваш пароль" required>
                                         </div>
 
                                         <div class="mb-3 text-end">

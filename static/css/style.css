@@ -355,9 +355,16 @@ ul.social-icons a:hover {
     text-shadow: 0 0 2px rgba(0, 0, 0, .9);
 }
 
-.carousel-custom-responsive img{
+@media (max-width: 2000px) {
+    .carousel-caption h5 {
+        font-size: 2vw;
+    }
 
+    .carousel-caption p {
+        font-size: 1.5vw;
+    }
 }
+
 
 .carousel-image {
     object-fit: cover; /* cover the container without distortion */
@@ -901,10 +908,6 @@ footer a:hover {
 /*======================= Category =======================*/
 
 /*======================= Product detail =======================*/
-
-.product-content .input-group {
-    width: 185px;
-}
 
 .list-elements {
     border-top: 1px solid var(--text-color);

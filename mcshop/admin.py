@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mcshop.models import *
+from mcshop.models import Categories, Series, ProductsImage, Products
 
 
 @admin.register(Categories)
