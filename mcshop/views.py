@@ -27,18 +27,6 @@ def search(request):
         'results': results,
         'query': query,
     }
-    # if category_slug == 'all':
-    #     mcshop = Products.objects.all()
-    # else:
-    #     mcshop = get_object_or_404(Products.objects.filter(category_slug=category_slug))
-    #
-    # paginator = Paginator(mcshop, 6)
-    # current_page = paginator.page(1)
-    #
-    # context = {
-    #     'title': 'Главная - Поиск',
-    #     'mcshop': current_page,
-    # }
 
     return render(request, 'mcshop/search.html', context)
 
@@ -272,13 +260,25 @@ def product_detail(request, product_slug):
     return render(request, 'mcshop/product_detail.html', context=context)
 
 
-def cart(request):
-    return render(request, 'mcshop/cart.html')
-
-
 def checkout(request):
     return render(request, 'mcshop/checkout.html')
 
 
 def configurator(request):
     return render(request, 'mcshop/configurator.html')
+
+
+def cart(request):
+    return render(request, 'mcshop/cart.html')
+
+
+def cart_add(request, product_id):
+    pass
+
+
+def cart_change(request, product_id):
+    pass
+
+
+def cart_remove(request, product_id):
+    pass

@@ -19,49 +19,73 @@
 
             <div class="container mb-3">
                 <div class="row">
-                    <div class="profile-info-first col-4 text-center">
-                        <div class="profile-img d-block w-100 p-3">
-                            <h2 class="pb-2">Профиль пользователя</h2>
-                            <img src="{% static 'images/users_images/placeholder.png' %}" alt="1">
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Имя*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Имя" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите Имя.
+                    <div class="profile-info-first col-4 text-start">
+                        <form action="{% url 'mcuser:profile' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {% if user.image %}
+                                <div class="profile-img d-block w-100 p-3">
+                                    <h2 class="pb-2">Профиль пользователя</h2>
+                                    <img src="{{ user.image.url }}" alt="1">
+                                    <input type="file" class="form-control mt-3" id="image" name="id_image" accept="image/*">
+                                </div>
+                            {% else %}
+                                <div class="profile-img d-block w-100 p-3">
+                                    <h2 class="pb-2">Профиль пользователя</h2>
+                                    <img src="{% static 'images/users_images/placeholder.png' %}" alt="1">
+                                    <input type="file" class="form-control mt-3" id="image" name="id_image" accept="image/*">
+                                    {% if form.image.errors %}
+                                        <div class="alert alert-danger alert-dismissible fade show">{{ form.image.errors }}</div>
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                            <div class="mb-3">
+                                <label for="id_username" class="form-label">Имя пользователя*</label>
+                                <input type="text" class="form-control"
+                                       value="{{ form.username.value }}"
+                                       name="username" id="id_username"
+                                       placeholder="Введите имя пользователя"
+                                       required>
+                                        {% if form.username.errors %}
+                                            <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+                                        {% endif %}
+                                            </div>
+                            <div class="mb-3">
+                                <label for="id_first_name" class="form-label">Имя*</label>
+                                <input type="text" class="form-control"
+                                       value="{{ form.first_name.value }}"
+                                       name="first_name" id="id_first_name"
+                                       placeholder="Введите ваше имя"
+                                       required>
+                                        {% if form.first_name.errors %}
+                                            <div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                                        {% endif %}
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Имя пользователя*</label>
-                            <input type="text" class="form-control" id="name" placeholder="Имя пользователя" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите Имя пользователя.
+                            <div class="mb-3">
+                                <label for="id_last_name" class="form-label">Фамилия*</label>
+                                <input type="text" class="form-control"
+                                       value="{{ form.last_name.value }}"
+                                       name="last_name" id="id_last_name"
+                                       placeholder="Введите вашу фамилию"
+                                       required>
+                                       {% if form.last_name.errors %}
+                                           <div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>
+                                       {% endif %}
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Электронная почта*</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите Email.
+                            <div class="mb-3">
+                                <label for="id_email" class="form-label">Email*</label>
+                                <input type="email" class="form-control"
+                                       value="{{ form.email.value }}"
+                                       name="email" id="id_email"
+                                       placeholder="Введите email"
+                                       required>
+                                {% if form.email.errors %}
+                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+                                {% endif %}
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone" class="form-label">Номер телефона*</label>
-                            <input type="tel" class="form-control" id="phone" placeholder="Номер телефона" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите Номер телефона.
+                            <div class="mb-3 text-end">
+                                <button type="submit" class="btn btn-dark">Сохранить</button>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="adress" class="form-label">Адрес доставки</label>
-                            <input type="text" class="form-control" id="adress" placeholder="Адрес" required>
-                            <div class="invalid-feedback">
-                                Пожалуйста, введите Адрес доставки.
-                            </div>
-                        </div>
-                        <div class="mb-3 text-end">
-                            <button type="submit" class="btn btn-dark">Сохранить</button>
-                        </div>
+                        </form>
                     </div>
                     <div class="profile-info col-8">
                         <div class="cart-content p-3 h-100 bg-white">
@@ -89,7 +113,8 @@
                                             </td>
                                             <td>85600₽</td>
                                             <td>
-                                                <input type="number" value="1" class="form-control cart-qty">
+                                                <label for="id_number1" class="d-none"></label>
+                                                <input type="number" id="id_number1" value="1" class="form-control cart-qty">
                                             </td>
                                             <td>
                                                 <button class="btn btn-outline-danger">
@@ -108,7 +133,8 @@
                                             </td>
                                             <td>83200₽</td>
                                             <td>
-                                                <input type="number" value="1" class="form-control cart-qty">
+                                                <label for="id_number2" class="d-none"></label>
+                                                <input type="number" id="id_number2" value="1" class="form-control cart-qty">
                                             </td>
                                             <td>
                                                 <button class="btn btn-outline-danger">
@@ -127,7 +153,8 @@
                                             </td>
                                             <td>81200₽</td>
                                             <td>
-                                                <input type="number" value="1" class="form-control cart-qty">
+                                                <label for="id_number3" class="d-none"></label>
+                                                <input type="number" id="id_number3" value="1" class="form-control cart-qty">
                                             </td>
                                             <td>
                                                 <button class="btn btn-outline-danger">
@@ -175,7 +202,8 @@
                                 </button>
 
                                 <div class="input-group collapse" id="collapseCoupon">
-                                    <input type="text" class="form-control" placeholder="Ввведите промокод">
+                                    <label for="id_discount" class="d-none"></label>
+                                    <input type="text" id="id_discount" class="form-control" placeholder="Введите промокод">
                                     <button class="btn btn-dark">
                                         <i class="fa-solid fa-check"></i>
                                     </button>
@@ -191,8 +219,7 @@
                                 <div class="d-grid pt-4">
                                     <a href="#" class="btn btn-dark">Перейти к оформлению</a>
                                 </div>
-                        </div>
-
+                            </div>
                         </div>
                     </div>
                 </div>

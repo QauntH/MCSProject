@@ -9,22 +9,35 @@
     ценящих плавность игрового процесса с высоким FPS на максимальных графических настройках
 {% endblock %}
 {% block series_styles %}
-    @media (max-width: 991.98px) {
 
     .responsive {
-        background-image: url({% static 'images/for-powerful-sub.jpg' %});
+        background-image: url({% static 'images/main-background.jpg' %});
     }
-}
+
+    @media (max-width: 991.98px) {
+        .responsive {
+            height: 800px;
+        }
+    }
 
     @media (min-width: 992px) {
-
-    .responsive {
-        background-image: url({% static 'images/for-powerful-main.jpg' %});
+        .responsive {
+            height: 700px;
+        }
     }
-}
-    .responsive-paragraph {
-    color: #FFFFFF;
-}
+
+    .text-responsive {
+        margin-bottom: 0px;
+    }
+
+{% endblock %}
+
+{% block product-content %}
+    <div class="notebook-image text-center">
+        <picture>
+            <img src="{% static 'images/for-powerful-update.png' %}" style="aspect-ratio: auto 1239 / 699" alt="1">
+        </picture>
+    </div>
 {% endblock %}
 
 {% block content %}

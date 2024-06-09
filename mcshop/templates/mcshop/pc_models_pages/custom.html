@@ -6,19 +6,35 @@
 {% block responsive_series_name %}КАСТОМНЫЕ ИГРОВЫЕ КОМПЬЮТЕРЫ{% endblock %}
 {% block responsive_p %}Эксклюзивная линейка компьютеров для тех, кто не ищет компромиссов в играх. Уникальные корпуса с RGB-подсветкой и системой водяного охлаждения. Персонализированные варианты для самых изысканных геймеров.{% endblock %}
 {% block series_styles %}
-    @media (max-width: 991.98px) {
 
     .responsive {
-        background-image: url({% static 'images/for-custom-sub.jpg' %});
+        background-image: url({% static 'images/main-background.jpg' %});
     }
-}
+
+    @media (max-width: 991.98px) {
+        .responsive {
+            height: 800px;
+        }
+    }
 
     @media (min-width: 992px) {
-
-    .responsive {
-        background-image: url({% static 'images/for-custom-main.jpg' %});
+        .responsive {
+            height: 700px;
+        }
     }
-}
+
+    .text-responsive {
+        margin-bottom: 0px;
+    }
+
+{% endblock %}
+
+{% block product-content %}
+    <div class="notebook-image text-center">
+        <picture>
+            <img src="{% static 'images/for-custom-update.png' %}" style="aspect-ratio: auto 1239 / 699" alt="1">
+        </picture>
+    </div>
 {% endblock %}
 
 {% block content %}

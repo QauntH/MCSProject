@@ -67,15 +67,35 @@
                                             Аккаунт
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'mcuser:login' %}">Вход</a>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-item" href="{% url 'mcuser:register' %}">Регистрация</a>
-                                            </li>
-                                            <li>
-                                                <a href="{% url 'mcuser:logout' %}" class="dropdown-item d-none">Выйти</a>
-                                            </li>
+                                            {% if not user.is_authenticated %}
+                                                <li>
+                                                    <a class="dropdown-item" href="{% url 'mcuser:login' %}">Вход</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="{% url 'mcuser:register' %}">Регистрация</a>
+                                                </li>
+                                            {% else %}
+                                                {% if user.is_admin or user.is_staff %}
+                                                    <li>
+                                                        <a href="{% url 'admin:index' %}" class="dropdown-item">Админ панель</a>
+                                                    </li>
+                                                    <li>
+                                                        <hr class="dropdown-divider">
+                                                    </li>
+                                                {% endif %}
+                                                <li>
+                                                    <a href="{% url 'mcuser:profile' %}" class="dropdown-item">Профиль</a>
+                                                </li>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li>
+                                                    <a href="{% url 'mcuser:logout' %}" class="dropdown-item">Выйти</a>
+                                                </li>
+                                            {% endif %}
                                         </ul>
                                     </div>
                                 </div>
@@ -103,7 +123,8 @@
                         <div class="col-lg-4 col-sm-6 order-md-1 mt-2 mt-md-0">
                             <form action="{% url 'mcshop:search' %}">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" name="q" placeholder="Поиск...">
+                                    <label for="q" class="d-none"></label>
+                                    <input type="text" class="form-control" name="q" placeholder="Поиск..." id="q">
                                     <button class="btn btn-outline-dark" type="submit" id="button-search">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </button>
@@ -114,8 +135,8 @@
                 </div>
             </div>
 
-            <div class="offcanvas offcanvas-end" tabindex="-1"
-            id="offcanvasCart" aria-labelledby="offcanvasCartLabel">
+            <div class="offcanvas offcanvas-end"
+            id="offcanvasCart" aria-labelledby="offcanvasCartLabel" tabindex="1">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title" id="offcanvasCartLabel">Корзина</h5>
                     <button type="button" class="btn-close"
@@ -351,10 +372,10 @@
         </div>
         
         <main class="main">
+            {% include 'includes/notifications.html' %}
             {% block main %}
-            
+
             {% endblock %}
-        {# Блок main служит вместилищем для кода содержимого каждой странички #}
         </main>
         <footer class="footer bg-dark" data-bs-theme="dark">
             <div class="container">
@@ -376,7 +397,6 @@
                             <li><a href="{% url 'mcuser:support' %}">Задать нам вопрос</a></li>
                             <li><a href="{% url 'mcuser:pay' %}">Оплата и доставка</a></li>
                             <li><a href="{% url 'mcuser:public_offer' %}">Публичная оферта</a></li>
-                            <li><a href="/">Copyright</a></li>
                         </ul>
                     </div>
 

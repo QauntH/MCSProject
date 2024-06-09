@@ -1,37 +1,40 @@
 {% extends 'mcshop/pc_models_pages/base.html' %}
 {% load static %}
 
-{% block carousel_script %}
-{#    $(".owl-carousel-full").owlCarousel($('.owl-carousel').owlCarousel({#}
-{#        margin:20,#}
-{#        loop: true,#}
-{#        nav: true,#}
-{#        lazyLoad: true,#}
-{#        responsive:{#}
-{#            0:{#}
-{#                items:1#}
-{#            },#}
-{#        }#}
-{#    }));#}
-{% endblock %}
 {% block series_name %}Оптимальные{% endblock %}
 {% block responsive_series_name %}ОПТИМАЛЬНЫЕ ИГРОВЫЕ КОМПЬЮТЕРЫ{% endblock %}
 {% block responsive_p %}Современные игровые компьютеры с процессорами Intel Core и видеокартами NVIDIA GeForce RTX
     предлагают идеальное сочетание производительности и стоимости{% endblock %}
 {% block series_styles %}
-    @media (max-width: 991.98px) {
 
     .responsive {
-        background-image: url({% static 'images/for-optimal-sub.jpg' %});
+        background-image: url({% static 'images/sub-background.jpg' %});
     }
-}
+
+    @media (max-width: 991.98px) {
+        .responsive {
+            height: 800px;
+        }
+    }
 
     @media (min-width: 992px) {
-
-    .responsive {
-        background-image: url({% static 'images/for-optimal-main.jpg' %});
+        .responsive {
+            height: 700px;
+        }
     }
-}
+
+    .text-responsive {
+        margin-bottom: 0px;
+    }
+
+{% endblock %}
+
+{% block product-content %}
+    <div class="notebook-image text-center">
+        <picture>
+            <img src="{% static 'images/for-optimal-update.png' %}" style="aspect-ratio: auto 1239 / 699" alt="1">
+        </picture>
+    </div>
 {% endblock %}
 
 {% block content %}

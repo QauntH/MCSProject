@@ -25,41 +25,71 @@
 
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
-                                    <form action="" class="needs-validation" novalidate>
+                                    <form action="{% url 'mcuser:register' %}" method="post">
+                                        {% csrf_token %}
                                         <div class="mb-3">
-                                            <label for="nickname" class="form-label">Ваше имя пользователя</label>
-                                            <input type="text" class="form-control" id="nickname" placeholder="Nickname" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Имя пользователя.
-                                            </div>
+                                            <label for="id_username" class="form-label">Имя пользователя*</label>
+                                            <input type="text" class="form-control"
+                                                value="{% if form.username.value %}{{ form.username.value }}{% endif %}"
+                                                name="username" id="id_username"
+                                                placeholder="Введите имя пользователя"
+                                                required>
+                                                {% if form.username.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.username.errors }}</div>
+                                                {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="name" class="form-label">Ваше имя</label>
-                                            <input type="text" class="form-control" id="name" placeholder="Name" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Имя.
-                                            </div>
+                                            <label for="id_first_name" class="form-label">Имя*</label>
+                                            <input type="text" class="form-control"
+                                                value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
+                                                name="first_name" id="id_first_name"
+                                                placeholder="Введите ваше имя"
+                                                required>
+                                                {% if form.first_name.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>
+                                                {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="email" class="form-label">Электронная почта</label>
-                                            <input type="email" class="form-control" id="email" placeholder="Email" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Email.
-                                            </div>
+                                            <label for="id_last_name" class="form-label">Фамилия*</label>
+                                            <input type="text" class="form-control"
+                                                value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
+                                                name="last_name" id="id_last_name"
+                                                placeholder="Введите вашу фамилию"
+                                                required>
+                                                {% if form.last_name.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.last_name.errors }}</div>
+                                                {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="phone" class="form-label">Номер телефона</label>
-                                            <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Номер телефона.
-                                            </div>
+                                            <label for="id_email" class="form-label">Email*</label>
+                                            <input type="email" class="form-control"
+                                                value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
+                                                name="email" id="id_email"
+                                                placeholder="Введите email"
+                                                required>
+                                                {% if form.email.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
+                                                {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="password" class="form-label">Пароль</label>
-                                            <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                            <div class="invalid-feedback">
-                                                Пожалуйста, введите Пароль.
-                                            </div>
+                                            <label for="id_password1" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control"
+                                                value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}"
+                                                name="password1" id="id_password1"
+                                                placeholder="Введите пароль" required>
+                                                {% if form.password1.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.password1.errors }}</div>
+                                                {% endif %}
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="id_password2" class="form-label">Пароль</label>
+                                            <input type="password" class="form-control"
+                                                value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}"
+                                                name="password2" id="id_password2"
+                                                placeholder="Введите пароль еще раз" required>
+                                                {% if form.password2.errors %}
+                                                    <div class="alert alert-danger alert-dismissible fade show">{{ form.password2.errors }}</div>
+                                                {% endif %}
                                         </div>
 
                                         <div class="mb-3 text-end">

@@ -8,7 +8,6 @@ urlpatterns = [
     path('base_generic/', views.base_generic, name='base_generic'),
     path('products/<slug:product_slug>/', views.product_detail, name='product_detail'),
     path('search/', views.search, name='search'),
-    path('cart/', views.cart, name='cart'),
     path('checkout/', views.checkout, name='checkout'),
     path('beta/', views.beta, name='beta'),
     path('alpha/', views.alpha, name='alpha'),
@@ -27,4 +26,8 @@ urlpatterns = [
     path('notebooks/', views.notebook, name='notebook'),
     path('optimal/', views.optimal, name='optimal'),
     path('powerful/', views.powerful, name='powerful'),
+    path('cart/', views.cart, name='cart'),
+    path('cart_add/<int:product_id>', views.cart_add, name='cart_add'),
+    path('cart_change/<int:product_id>', views.cart_change, name='cart_change'),
+    path('cart_remove/<int:product_id>', views.cart_remove, name='cart_remove'),
 ]

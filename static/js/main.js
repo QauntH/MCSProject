@@ -2,6 +2,16 @@ window.addEventListener('scroll', function() {
     document.getElementById('header-nav').classList.toggle('headernav-scroll', window.scrollY > 135);
 });
 
+window.addEventListener('load', function() {
+    const alert = document.getElementById('notification');
+    if (alert) {
+        setTimeout(() => {
+            const alertInstance = new bootstrap.Alert(alert);
+            alertInstance.close();
+        }, 10000);
+    }
+});
+
 $(document).ready(function(){
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -69,21 +79,3 @@ context_small.fillStyle = 'white';
 context_small.fillRect(10, 10, 100, 50);
 
 
-// const canvas_medium = document.getElementById('canvas-medium');
-// canvas_medium.width = 900;
-// canvas_medium.height = 850;
-//
-// const context_medium = canvas_medium.getContext('2d');
-//
-// context_medium.fillStyle = 'white';
-// context_medium.fillRect(10, 10, 100, 50);
-//
-//
-// const canvas_large = document.getElementById('canvas-large');
-// canvas_large.width = 780;
-// canvas_large.height = 660;
-//
-// const context_large = canvas_large.getContext('2d');
-//
-// context_large.fillStyle = 'white';
-// context_large.fillRect(10, 10, 100, 50);

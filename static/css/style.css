@@ -161,6 +161,18 @@ section {
     border-top: 1px dashed var(--text-color);
 }
 
+.alert-success,
+.alert {
+    --bs-alert-color: #000000;
+    --bs-alert-bg: var(--bg-color);
+    --bs-alert-border-color: #00000;
+    --bs-alert-link-color: #000000;
+    border-radius: 0;
+    z-index: 2000;
+}
+
+
+
 /*=======================  General rules =======================*/
 
 /*=======================  Header rules =======================*/
@@ -170,6 +182,10 @@ section {
 
 .header-top-phone a:hover {
     text-decoration: underline;
+}
+
+.sticky-top {
+    z-index: 999;
 }
 
 
@@ -274,8 +290,8 @@ ul.social-icons a:hover {
 }
 
 .headernav-scroll.header-bottom .navbar .offcanvas:not(.show) .nav-link {
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
 }
 
 /*=======================  Header rules =======================*/
