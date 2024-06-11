@@ -58,12 +58,12 @@ $(document).ready(function(){
     })
 })()
 
-
-const canvas_small = document.getElementById('canvas-small');
-canvas_small.width = 960;
-canvas_small.height = 800;
-
-const context_small = canvas_small.getContext('2d');
-
-context_small.fillStyle = 'white';
-context_small.fillRect(10, 10, 100, 50);
+//
+// const canvas_small = document.getElementById('canvas-small');
+// canvas_small.width = 960;
+// canvas_small.height = 800;
+//
+// const context_small = canvas_small.getContext('2d');
+//
+// context_small.fillStyle = 'white';
+// context_small.fillRect(10, 10, 100, 50);

@@ -315,16 +315,68 @@ def cart_add(request):
     return JsonResponse(response_data)
 
 
-def cart_change(request, product_slug):
-    pass
-
-
-def cart_remove(request, cart_id):
+def cart_change(request):
+    cart_id = request.POST.get("cart_id")
+    quantity = request.POST.get("quantity")
 
     cart = Cart.objects.get(id=cart_id)
+
+    cart.quantity = quantity
+    cart.save()
+
+    user_cart = get_user_carts(request)
+    cart_items_html_1 = render_to_string(
+        'includes/included_cart_main_part_1.html', {'carts': user_cart}, request=request
+    )
+
+    cart_items_html_2 = render_to_string(
+        'includes/included_cart_main_part_2.html', {'carts': user_cart}, request=request
+    )
+
+    cart_items_html_3 = render_to_string(
+        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
+    )
+
+    response_data = {
+        'message': 'Количество изменено',
+        'cart_items_html_1': cart_items_html_1,
+        'cart_items_html_2': cart_items_html_2,
+        'cart_items_html_3': cart_items_html_3,
+    }
+
+    return JsonResponse(response_data)
+
+
+def cart_remove(request):
+
+    cart_id = request.POST.get('cart_id')
+
+    cart = Cart.objects.get(id=cart_id)
+    quantity = cart.quantity
     cart.delete()
 
-    return redirect(request.META['HTTP_REFERER'])
+    user_cart = get_user_carts(request)
+    cart_items_html_1 = render_to_string(
+        'includes/included_cart_main_part_1.html', {'carts': user_cart}, request=request
+    )
+
+    cart_items_html_2 = render_to_string(
+        'includes/included_cart_main_part_2.html', {'carts': user_cart}, request=request
+    )
+
+    cart_items_html_3 = render_to_string(
+        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
+    )
+
+    response_data = {
+        'message': 'Товар удален из корзины',
+        'cart_items_html_1': cart_items_html_1,
+        'cart_items_html_2': cart_items_html_2,
+        'cart_items_html_3': cart_items_html_3,
+        'quantity_deleted': quantity,
+    }
+
+    return JsonResponse(response_data)
 
 
 def cart_clear(request):

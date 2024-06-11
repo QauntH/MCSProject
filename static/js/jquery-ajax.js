@@ -10,6 +10,8 @@ $(document).ready(function () {
         // Берем элемент счетчика в значке корзины и берем оттуда значение
         var goodsInCartCount = $("#goods-in-cart-count");
         var cartCount = parseInt(goodsInCartCount.text() || 0);
+        var goodsInCartCount_2 = $("#goods-in-cart-count-2");
+        var cartCount_2 = parseInt(goodsInCartCount_2.text() || 0);
 
         // Получаем id товара из атрибута data-product-id
         var product_id = $(this).data("product-id");
@@ -36,7 +38,9 @@ $(document).ready(function () {
 
                 // Увеличиваем количество товаров в корзине (отрисовка в шаблоне)
                 cartCount++;
+                cartCount_2++;
                 goodsInCartCount.text(cartCount);
+                goodsInCartCount_2.text(cartCount_2);
 
                 // Меняем содержимое корзины на ответ от django (новый отрисованный фрагмент разметки корзины)
                 var cartItemsContainer1 = $("#cart-items-container-1");
@@ -66,6 +70,8 @@ $(document).ready(function () {
         // Берем элемент счетчика в значке корзины и берем оттуда значение
         var goodsInCartCount = $("#goods-in-cart-count");
         var cartCount = parseInt(goodsInCartCount.text() || 0);
+        var goodsInCartCount_2 = $("#goods-in-cart-count-2");
+        var cartCount_2 = parseInt(goodsInCartCount_2.text() || 0);
 
         // Получаем id корзины из атрибута data-cart-id
         var cart_id = $(this).data("cart-id");
@@ -93,6 +99,8 @@ $(document).ready(function () {
                 // Уменьшаем количество товаров в корзине (отрисовка)
                 cartCount -= data.quantity_deleted;
                 goodsInCartCount.text(cartCount);
+                cartCount_2 -= data.quantity_deleted;
+                goodsInCartCount_2.text(cartCount_2);
 
                 // Меняем содержимое корзины на ответ от django (новый отрисованный фрагмент разметки корзины)
                 var cartItemsContainer1 = $("#cart-items-container-1");
@@ -122,7 +130,7 @@ $(document).ready(function () {
         // Берем id корзины из атрибута data-cart-id
         var cartID = $(this).data("cart-id");
         // Ищем ближайшей input с количеством
-        var $input = $(this).closest('.input-group').find('.number');
+        var $input = $(this).closest('.inp-group').find('.number');
         // Берем значение количества товара
         var currentValue = parseInt($input.val());
         // Если количества больше одного, то только тогда делаем -1
@@ -141,7 +149,7 @@ $(document).ready(function () {
         // Берем id корзины из атрибута data-cart-id
         var cartID = $(this).data("cart-id");
         // Ищем ближайший input с количеством
-        var $input = $(this).closest('.input-group').find('.number');
+        var $input = $(this).closest('.inp-group').find('.number');
         // Берем значение количества товара
         var currentValue = parseInt($input.val());
 
@@ -174,8 +182,12 @@ $(document).ready(function () {
                 // Изменяем количество товаров в корзине
                 var goodsInCartCount = $("#goods-in-cart-count");
                 var cartCount = parseInt(goodsInCartCount.text() || 0);
+                var goodsInCartCount_2 = $("#goods-in-cart-count-2");
+                var cartCount_2 = parseInt(goodsInCartCount_2.text() || 0);
                 cartCount += change;
                 goodsInCartCount.text(cartCount);
+                cartCount_2 += change;
+                goodsInCartCount_2.text(cartCount_2);
 
                 // Меняем содержимое корзины
                 var cartItemsContainer1 = $("#cart-items-container-1");

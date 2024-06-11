@@ -88,12 +88,13 @@
                         </form>
                     </div>
                     <div class="profile-info col-sm-8 col-12">
-                        <div class="cart-content p-3 h-100 bg-white" id="cart-items-container">
-                            <div class="table-responsive">
+                        <div class="cart-content p-3 h-100 bg-white">
+                            <div class="table-responsive" id="cart-items-container-1">
                                 {% include 'includes/included_cart_main_part_1.html' %}
                             </div>
-
-                            {% include 'includes/included_cart_main_part_2.html' %}
+                            <div id="cart-items-container">
+                                {% include 'includes/included_cart_main_part_2.html' %}
+                            </div>
                         </div>
                     </div>
                 </div>

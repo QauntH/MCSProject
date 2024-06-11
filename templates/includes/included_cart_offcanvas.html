@@ -14,7 +14,8 @@
                         <td>{{ cart.product.sell_price }} ₽</td>
                         <td>{{ cart.quantity }}</td>
                         <td>
-                            <a href="{% url 'mcshop:cart_remove' %}">
+                            <a href="{% url 'mcshop:cart_remove' %}" class="remove-from-cart" data-cart-id="{{ cart.id }}">
+                                {% csrf_token %}
                                 <button class="btn  btn-outline-danger">
                                     <i class="fa-regular fa-rectangle-xmark"></i>
                                 </button>

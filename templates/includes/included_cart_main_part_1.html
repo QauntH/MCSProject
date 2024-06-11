@@ -27,11 +27,17 @@
             </td>
             <td>{{ cart.product.sell_price }} ₽</td>
             <td>
-                <label class="d-none" for="counter1"></label>
-                <input type="number" value="{{ cart.quantity }}" id="counter1" min="1" class="form-control cart-qty">
+                <div class="d-flex inp-group">
+                    <button type="button" class="btn btn-dark btn-sm decrement" style="width: 30px"
+                        data-cart-id="{{ cart.id }}" data-cart-change-url="{% url 'mcshop:cart_change' %}">{% csrf_token %}-</button>
+                    <input type="text" value="{{ cart.quantity }}" min="1" class="form-control number cart-qty" readonly>
+                    <button type="button" class="btn btn-dark btn-sm increment" style="width: 30px"
+                        data-cart-id="{{ cart.id }}" data-cart-change-url="{% url 'mcshop:cart_change' %}">{% csrf_token %}+</button>
+                </div>
             </td>
             <td>
-                <a href="{% url 'mcshop:cart_remove' %}" class="btn btn-outline-danger">
+                <a href="{% url 'mcshop:cart_remove' %}" data-cart-id="{{ cart.id }}" class="btn btn-outline-danger remove-from-cart">
+                    {% csrf_token %}
                     <i class="fa-regular fa-rectangle-xmark"></i>
                 </a>
             </td>

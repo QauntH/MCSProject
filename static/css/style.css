@@ -362,23 +362,13 @@ ul.social-icons a:hover {
     .carousel-item img,
     .responsive-series-image img {
         width: auto;
-        max-width: 1920px;
+        max-width: 1600px;
         margin: auto;
     }
 }
 
 .carousel-caption {
     text-shadow: 0 0 2px rgba(0, 0, 0, .9);
-}
-
-@media (max-width: 2000px) {
-    .carousel-caption h5 {
-        font-size: 2vw;
-    }
-
-    .carousel-caption p {
-        font-size: 1.5vw;
-    }
 }
 
 
@@ -893,7 +883,7 @@ footer a:hover {
 }
 
 .location-main {
-    max-width: 1920px;
+    max-width: 1600px;
     margin: auto;
 }
 
@@ -995,7 +985,7 @@ footer a:hover {
 }
 
 .cart-qty {
-    width: 60px;
+    width: 45px;
 }
 
 .btn-coupon {

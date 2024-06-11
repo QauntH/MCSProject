@@ -95,3 +95,10 @@ def public_offer(request):
         'title': 'Условия публичной оферты',
     }
     return render(request, 'mcuser/public_offer.html', context)
+
+
+def copyright_page(request):
+    context = {
+        'title': 'Условия публичной оферты',
+    }
+    return render(request, 'mcuser/copyright_page.html', context)
