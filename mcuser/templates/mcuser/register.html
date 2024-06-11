@@ -72,7 +72,7 @@
                                                 {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="id_password1" class="form-label">Пароль</label>
+                                            <label for="id_password1" class="form-label">Пароль*</label>
                                             <input type="password" class="form-control"
                                                 value="{% if form.password1.value %}{{ form.password1.value }}{% endif %}"
                                                 name="password1" id="id_password1"
@@ -82,7 +82,7 @@
                                                 {% endif %}
                                         </div>
                                         <div class="mb-3">
-                                            <label for="id_password2" class="form-label">Пароль</label>
+                                            <label for="id_password2" class="form-label">Повторный пароль*</label>
                                             <input type="password" class="form-control"
                                                 value="{% if form.password2.value %}{{ form.password2.value }}{% endif %}"
                                                 name="password2" id="id_password2"

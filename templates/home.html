@@ -13,25 +13,13 @@
                 <div class="carousel-inner">
                     <div class="carousel-wrapper">
                         <div class="carousel-item carousel-custom-responsive active">
-                            <img src="{% static 'images/kit-responsive.jpg' %}" class="d-block w-100" alt="Тематическое изображение технологий">
-                            <div class="carousel-caption">
-                                <h5>Встречайте инновационную линейку GeForce</h5>
-                                <p>Новейшие видеокарты GeForce RTX уже в наших компьютерах.</p>
-                            </div>
+                            <img src="{% static 'images/for-home-carousel/for-carousel-1.jpg' %}" class="d-block w-100" alt="Тематическое изображение технологий">
                         </div>
                         <div class="carousel-item carousel-custom-responsive">
-                            <img src="{% static 'images/partner_responsive.jpg' %}" class="d-block w-100" alt="Изображение в контексте обширного опыта работы">
-                            <div class="carousel-caption">
-                                <h5>Партнерство с лучшими</h5>
-                                <p>Наше сотрудничество с ведущими компаниями сделает ваш опыт еще лучше.</p>
-                            </div>
+                            <img src="{% static 'images/for-home-carousel/for-carousel-2.jpg' %}" class="d-block w-100" alt="Изображение в контексте обширного опыта работы">
                         </div>
                         <div class="carousel-item carousel-custom-responsive">
-                            <img src="{% static 'images/design_responsive.jpg' %}" class="d-block w-100" alt="Изображение с геолокацией предприятия">
-                            <div class="carousel-caption">
-                                <h5>Наши сотрудники мастера и в дизайне</h5>
-                                <p>Мы поможем с обустройством Вашего рабочего места.</p>
-                            </div>
+                            <img src="{% static 'images/for-home-carousel/for-carousel-3.jpg' %}" class="d-block w-100" alt="Изображение с геолокацией предприятия">
                         </div>
                     </div>
                 </div>
@@ -116,7 +104,10 @@
                                             {{ product.price }}₽
                                         </div>
                                         <div class="product-links">
-                                            <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                            <a href="{% url 'mcshop:cart_add' %}" class="btn btn-outline-light add-to-cart" data-product-id="{{ product.id }}">
+                                                {% csrf_token %}
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

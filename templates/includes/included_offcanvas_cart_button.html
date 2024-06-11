@@ -1,0 +1,11 @@
+{% load static %}
+{% load carts_tags %}
+
+{% cart request as carts %}
+
+
+<button class="btn p-1" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <span class="badge text-bg-dark cart-badge bg-dark rounded-circle" id="goods-in-cart-count">{{ carts.total_quantity }}</span>
+</button>

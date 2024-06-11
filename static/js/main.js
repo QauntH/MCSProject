@@ -2,16 +2,6 @@ window.addEventListener('scroll', function() {
     document.getElementById('header-nav').classList.toggle('headernav-scroll', window.scrollY > 135);
 });
 
-window.addEventListener('load', function() {
-    const alert = document.getElementById('notification');
-    if (alert) {
-        setTimeout(() => {
-            const alertInstance = new bootstrap.Alert(alert);
-            alertInstance.close();
-        }, 10000);
-    }
-});
-
 $(document).ready(function(){
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
@@ -77,5 +67,3 @@ const context_small = canvas_small.getContext('2d');
 
 context_small.fillStyle = 'white';
 context_small.fillRect(10, 10, 100, 50);
-
-

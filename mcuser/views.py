@@ -37,7 +37,8 @@ def login(request):
                 auth.login(request, user)
                 messages.success(request, 'Вы успешно вошли в аккаунт!')
 
-                if request.POST.get('next', None):
+                redirect_page = request.POST.get('next', None)
+                if redirect_page and redirect_page != reverse('mcuser:logout'):
                     return HttpResponseRedirect(request.POST.get('next'))
 
                 return HttpResponseRedirect(reverse('mcshop:home'))

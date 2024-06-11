@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mcshop.models import Categories, Series, ProductsImage, Products
+from mcshop.models import *
 
 
 @admin.register(Categories)
@@ -22,6 +22,5 @@ class ProductsAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
     inlines = [ProductsImageInline]
 
-# @admin.register(PCModel)
-# class PCModelAdmin(admin.ModelAdmin):
-#     prepopulated_fields = {'slug': ('name',)}
+
+admin.site.register(Cart)

@@ -19,7 +19,7 @@
 
             <div class="container mb-3">
                 <div class="row">
-                    <div class="profile-info-first col-4 text-start">
+                    <div class="profile-info-first col-sm-4 col-12 text-start">
                         <form action="{% url 'mcuser:profile' %}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             {% if user.image %}
@@ -87,139 +87,13 @@
                             </div>
                         </form>
                     </div>
-                    <div class="profile-info col-8">
-                        <div class="cart-content p-3 h-100 bg-white">
-
+                    <div class="profile-info col-sm-8 col-12">
+                        <div class="cart-content p-3 h-100 bg-white" id="cart-items-container">
                             <div class="table-responsive">
-                                <table class="table align-middle table-hover">
-                                    <thead class="table-dark">
-                                        <tr>
-                                            <th>Фото</th>
-                                            <th>Товар</th>
-                                            <th>Цена</th>
-                                            <th>Кол-во</th>
-                                            <th><i class="fa-regular fa-trash-can"></i></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="product-image-td">
-                                                <a href="#">
-                                                    <img src="/static/images/computer_images/1.jpg" alt="1">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="cart-content-title">Описание товара 1</a>
-                                            </td>
-                                            <td>85600₽</td>
-                                            <td>
-                                                <label for="id_number1" class="d-none"></label>
-                                                <input type="number" id="id_number1" value="1" class="form-control cart-qty">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-outline-danger">
-                                                    <i class="fa-regular fa-rectangle-xmark"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-image-td">
-                                                <a href="#">
-                                                    <img src="/static/images/computer_images/2.jpg" alt="1">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="cart-content-title">Описание товара 2</a>
-                                            </td>
-                                            <td>83200₽</td>
-                                            <td>
-                                                <label for="id_number2" class="d-none"></label>
-                                                <input type="number" id="id_number2" value="1" class="form-control cart-qty">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-outline-danger">
-                                                    <i class="fa-regular fa-rectangle-xmark"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="product-image-td">
-                                                <a href="#">
-                                                    <img src="/static/images/computer_images/3.jpg" alt="1">
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <a href="#" class="cart-content-title">Описание товара 3</a>
-                                            </td>
-                                            <td>81200₽</td>
-                                            <td>
-                                                <label for="id_number3" class="d-none"></label>
-                                                <input type="number" id="id_number3" value="1" class="form-control cart-qty">
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-outline-danger">
-                                                    <i class="fa-regular fa-rectangle-xmark"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5" class="text-end">
-                                                <button class="btn btn-outline-dark">Обновить корзину</button>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
+                                {% include 'includes/included_cart_main_part_1.html' %}
                             </div>
 
-                            <div class="cart-summary p-3 sidebar bg-white">
-                                <h5 class="section-title"><span>Сумма покупки</span></h5>
-
-                                <div class="d-flex justify-content-between my-3">
-                                    <h6>
-                                        Цена
-                                    </h6>
-                                    <h6>250000₽</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between my-3">
-                                    <h6>
-                                        Промокод
-                                    </h6>
-                                    <h6>-25000₽</h6>
-                                </div>
-
-                                <div class="d-flex justify-content-between my-3 border-bottom">
-                                    <h6>
-                                        Доставка
-                                    </h6>
-                                    <h6>Бесплатно</h6>
-                                </div>
-
-                                <button class="btn btn-link px-0 btn-coupon" data-bs-toggle="collapse" data-bs-target="#collapseCoupon">
-                                    Есть промокод?
-                                </button>
-
-                                <div class="input-group collapse" id="collapseCoupon">
-                                    <label for="id_discount" class="d-none"></label>
-                                    <input type="text" id="id_discount" class="form-control" placeholder="Введите промокод">
-                                    <button class="btn btn-dark">
-                                        <i class="fa-solid fa-check"></i>
-                                    </button>
-                                </div>
-
-                                <div class="d-flex justify-content-between my-3">
-                                    <h4>
-                                        Итого
-                                    </h4>
-                                    <h4>225000₽</h4>
-                                </div>
-
-                                <div class="d-grid pt-4">
-                                    <a href="#" class="btn btn-dark">Перейти к оформлению</a>
-                                </div>
-                            </div>
+                            {% include 'includes/included_cart_main_part_2.html' %}
                         </div>
                     </div>
                 </div>

@@ -86,10 +86,11 @@
                                     </a>
                                 </div>
                                 <div class="product-add2cart col-6 d-flex justify-content-end">
-                                    <button class="btn btn-dark">
+                                    <a href="{% url 'mcshop:cart_add' %}" class="btn btn-dark add-to-cart" data-product-id="{{ product.id }}">
+                                        {% csrf_token %}
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         В корзину
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-series-main mt-3 row">
@@ -213,10 +214,11 @@
                                     </a>
                                 </div>
                                 <div class="product-add2cart col-6 d-flex justify-content-end">
-                                    <button class="btn btn-dark">
+                                    <a href="{% url 'mcshop:cart_add' %}" class="btn btn-dark add-to-cart" data-product-id="{{ product.id }}">
+                                        {% csrf_token %}
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         В корзину
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-series-main mt-3 row">
@@ -339,10 +341,11 @@
                                     </a>
                                 </div>
                                 <div class="product-add2cart col-6 d-flex justify-content-end">
-                                    <button class="btn btn-dark">
+                                    <a href="{% url 'mcshop:cart_add' %}" class="btn btn-dark add-to-cart" data-product-id="{{ product.id }}">
+                                        {% csrf_token %}
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         В корзину
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card-series-main mt-3 row">

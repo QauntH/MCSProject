@@ -79,12 +79,13 @@
                                     Цена {{ product.price }} ₽
                                 </div>
                                 <div class="details-button col-6 d-flex justify-content-start">
-                                    <button class="btn btn-dark">
+                                    <a href="{% url 'mcshop:product_detail' product.slug  %}" class="btn btn-dark">
                                         Подробнее
-                                    </button>
+                                    </a>
                                 </div>
                                 <div class="product-add2cart col-6 d-flex justify-content-end">
-                                    <a class="btn btn-dark" href="{% url 'mcshop:product_detail' product.slug  %}">
+                                    <a href="{% url 'mcshop:cart_add' %}" class="btn btn-dark add-to-cart" data-product-id="{{ product.id }}">
+                                        {% csrf_token %}
                                         <i class="fa-solid fa-cart-shopping"></i>
                                         В корзину
                                     </a>

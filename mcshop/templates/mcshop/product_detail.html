@@ -24,7 +24,7 @@
                     <div class="col-md-5 col-lg-4 mb-3">
                         <div class="bg-white h-100">
                             <div id="carousel" class="carousel slide carousel-fade custom-carousel">
-                                <div class="carousel-inner">
+                                <div class="carousel-inner" style="background-color: #FFFFFF">
                                     <div class="carousel-wrapper">
                                         {% for image in images %}
                                             <div class="carousel-item {% if forloop.first %}active{% endif %}">
@@ -74,45 +74,50 @@
                                             <label class="d-none">
                                                 <input type="number" class="form-control" name="name" min="1" value="1">
                                             </label>
-                                            <button class="btn btn-dark">
+                                            <a href="{% url 'mcshop:cart_add' %}" class="btn btn-dark add-to-cart" data-product-id="{{ products.id }}">
+                                                {% csrf_token %}
                                                 <i class="fa-solid fa-cart-shopping"></i>
                                                 В корзину
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="row">
-                                <div class="col-lg-6 custom-pb">
-                                    <div class="card h-100">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <i class="fa-solid fa-shield-halved"></i>
-                                                Гарантия
-                                            </h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fa-solid fa-check"></i>Все наши компьютеры имеют гарантию 1 год</li>
-                                                <li><i class="fa-solid fa-check"></i>Возможность возврата в течение 14 дней</li>
-                                                <li><i class="fa-solid fa-check"></i>Возможность увеличения срока гарантии</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-lg-6 custom-pb">
+                        <div class="bg-white p-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                        Гарантия
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa-solid fa-check"></i>Все наши компьютеры имеют гарантию 1 год</li>
+                                        <li><i class="fa-solid fa-check"></i>Возможность возврата в течение 14 дней</li>
+                                        <li><i class="fa-solid fa-check"></i>Возможность увеличения срока гарантии</li>
+                                    </ul>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="card h-100">
-                                        <div class="card-body">
-                                            <h5 class="card-title">
-                                                <i class="fa-solid fa-truck-fast"></i>
-                                                Доставка
-                                            </h5>
-                                            <ul class="list-unstyled">
-                                                <li><i class="fa-solid fa-check"></i>Доставка курьером до дома</li>
-                                                <li><i class="fa-solid fa-check"></i>Доставка по почте</li>
-                                                <li><i class="fa-solid fa-check"></i>Самовывоз</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-white p-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="fa-solid fa-truck-fast"></i>
+                                        Доставка
+                                    </h5>
+                                    <ul class="list-unstyled">
+                                        <li><i class="fa-solid fa-check"></i>Доставка курьером до дома</li>
+                                        <li><i class="fa-solid fa-check"></i>Доставка по почте</li>
+                                        <li><i class="fa-solid fa-check"></i>Самовывоз</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -258,7 +263,10 @@
                                                 {{ recommend.price }}₽
                                             </div>
                                             <div class="product-links">
-                                                <a href="#" class="btn btn-outline-light add-to-cart"><i class="fas fa-shopping-cart"></i></a>
+                                                <a href="{% url 'mcshop:cart_add' %}" data-product-id="{{ recommend.id }}" class="btn btn-outline-light add-to-cart">
+                                                    {% csrf_token %}
+                                                    <i class="fas fa-shopping-cart"></i>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

@@ -1,0 +1,51 @@
+{% load static %}
+{% load carts_tags %}
+
+{% cart request as carts %}
+
+{% if carts %}
+<table class="table align-middle table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Фото</th>
+            <th>Товар</th>
+            <th>Цена</th>
+            <th>Кол-во</th>
+            <th><i class="fa-regular fa-trash-can"></i></th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for cart in carts %}
+        <tr>
+            <td class="product-image-td">
+                <a href="{% url 'mcshop:product_detail' cart.product.slug %}">
+                    <img src="{{ cart.product.image.url }}" alt="1">
+                </a>
+            </td>
+            <td>
+                <p class="cart-content-title">{{ cart.product.name }}</p>
+            </td>
+            <td>{{ cart.product.sell_price }} ₽</td>
+            <td>
+                <label class="d-none" for="counter1"></label>
+                <input type="number" value="{{ cart.quantity }}" id="counter1" min="1" class="form-control cart-qty">
+            </td>
+            <td>
+                <a href="{% url 'mcshop:cart_remove' %}" class="btn btn-outline-danger">
+                    <i class="fa-regular fa-rectangle-xmark"></i>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="5" class="text-end">
+                <a href="{% url 'mcshop:cart_clear' %}" class="btn btn-outline-dark">Очистить корзину</a>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+{% else %}
+    <h4 class="text-center">Ваша корзина пуста</h4>
+{% endif %}
