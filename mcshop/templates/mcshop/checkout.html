@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block script %}
-fetch('/static/js/countries.json')
-            .then((res) => res.json())
-            .then((json) => {
-                let html = '';
-                json['countries'].forEach((el) => {
-                    html += `<option value="${el.code}" ${el.code === 'RU' ? 'selected' : ''}>${el.name}</option>`;
-                });
-                document.getElementById('country').innerHTML = html
-            });
+    fetch('/static/js/countries.json')
+        .then((res) => res.json())
+        .then((json) => {
+        let html = '';
+        json['countries'].forEach((el) => {
+           html += `<option value="${el.code}" ${el.code === 'RU' ? 'selected' : ''}>${el.name}</option>`;
+        });
+        document.getElementById('country').innerHTML = html
+    });
 {% endblock %}
 
 {% block main %}
@@ -39,7 +39,7 @@ fetch('/static/js/countries.json')
                         <div class="col-lg-8 mb-3">
                             <div class="checkout-content p-3 h-100 bg-white">
     
-                                <h1 class="section-title h4"><span>Адрес доставки</span></h1>
+                                <h1 class="section-title h4"><span>Данные покупателя</span></h1>
                                 
                                 <div class="row g-3">
 

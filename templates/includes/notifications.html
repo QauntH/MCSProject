@@ -19,12 +19,12 @@
             {% if messages %}
                 {% for message in messages %}
                     {% if message.tags == 'success' %}
-                    <div id="notification" class="position-fixed top-0 start-50 translate-middle-x alert alert-success fade show" role="alert">
+                    <div id="notification" class="position-fixed top-0 start-50 translate-middle-x alert alert-success fade show" style="margin-top: 60px" role="alert">
                         {{ message }} <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     {% endif %}
                     {% if message.tags == 'warning' %}
-                    <div id="notification" class="position-fixed top-0 start-50 translate-middle-x alert alert-danger fade show" role="alert">
+                    <div id="notification" class="position-fixed top-0 start-50 translate-middle-x alert alert-danger fade show" style="margin-top: 60px" role="alert">
                         {{ message }}
                     </div>
                     {% endif %}

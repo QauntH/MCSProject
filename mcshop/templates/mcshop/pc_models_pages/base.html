@@ -1,6 +1,17 @@
 {% extends 'base_generic.html' %}
 {% load static %}
 
+{% block script %}
+    document.addEventListener("DOMContentLoaded", function() {
+        var scrollButton = document.getElementById("scroll-to-products");
+        var targetBlock = document.getElementById("target-block");
+
+        scrollButton.addEventListener("click", function() {
+            targetBlock.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+{% endblock %}
+
 {% block main %}
 
     <section class="responsive position-relative">
@@ -12,7 +23,7 @@
                 <div class="responsive-paragraph">
                     <p>{% block responsive_p %}{% endblock %}</p>
                 </div>
-                <button class="btn btn-responsive" type="button" id="scroll-bottom">
+                <button class="btn btn-responsive" type="button" id="scroll-to-products">
                     КОМПЛЕКТАЦИИ И ЦЕНЫ
                 </button>
             </div>

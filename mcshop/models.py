@@ -1,7 +1,7 @@
 from django.db import models
+from django.urls import reverse
+
 from mcuser.models import User
-from django.utils import timezone
-from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Categories(models.Model):
@@ -61,6 +61,9 @@ class Products(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('mcshop:product_detail', kwargs={'product_slug': self.slug})
 
     def display_id(self):
         return f'{self.id:04}'
