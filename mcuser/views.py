@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib import auth, messages
 from django.urls import reverse
+from mcshop.models import Cart
 
 from mcuser.forms import UserLoginForm, UserRegistrationForm, ProfileForm
 
@@ -10,11 +11,18 @@ from mcuser.forms import UserLoginForm, UserRegistrationForm, ProfileForm
 def register(request):
     if request.method == 'POST':
         form = UserRegistrationForm(data=request.POST)
+
+        session_key = request.session.session_key
+
         if form.is_valid():
             form.save()
             user = form.instance
             auth.login(request, user)
             messages.success(request, 'Вы успешно зарегистрировались и вошли в аккаунт!')
+
+            if session_key:
+                Cart.objects.filter(session_key=session_key).update(user=user)
+
             return HttpResponseRedirect(reverse('mcshop:home'))
     else:
         form = UserRegistrationForm()
@@ -33,9 +41,15 @@ def login(request):
             username = request.POST['username']
             password = request.POST['password']
             user = auth.authenticate(username=username, password=password)
+
+            session_key = request.session.session_key
+
             if user:
                 auth.login(request, user)
                 messages.success(request, 'Вы успешно вошли в аккаунт!')
+
+                if session_key:
+                    Cart.objects.filter(session_key=session_key).update(user=user)
 
                 redirect_page = request.POST.get('next', None)
                 if redirect_page and redirect_page != reverse('mcuser:logout'):
