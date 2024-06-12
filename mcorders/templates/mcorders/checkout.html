@@ -33,9 +33,20 @@
 
             <div class="container">
 
-                <form action="" class="needs-validation" novalidate>
-
                     <div class="row">
+                        <div class="col-lg-4 mb-3">
+
+                            <div class="cart-summary p-3 sidebar bg-white h-100">
+
+                                <h5 class="section-title"><span>Итог заказа</span></h5>
+                                <div id="cart-items-container-4">
+                                    {% cart request as carts %}
+                                    {% include 'includes/included_cart_offcanvas.html' %}
+                                </div>
+
+                            </div>
+
+                        </div>
 
                         <div class="col-lg-8 mb-3">
                             <div class="checkout-content p-3 h-100 bg-white">
@@ -46,7 +57,7 @@
                                 <form action="{% url 'mcorders:checkout' %}" method="post">
                                     {% csrf_token %}
                                     <div class="row">
-                                        <div class="mb-3 col-md-6">
+                                        <div class="mb-2 col-md-6">
                                             <label for="id_first_name" class="form-label">Имя*</label>
                                             <input type="text" class="form-control"
                                                    value="{% if form.first_name.value %}{{ form.first_name.value }}{% endif %}"
@@ -57,7 +68,7 @@
                                                         <div class="alert alert-danger alert-dismissible fade show">{{ form.first_name.errors }}</div>
                                                     {% endif %}
                                         </div>
-                                        <div class="mb-3 col-md-6">
+                                        <div class="mb-2 col-md-6">
                                             <label for="id_last_name" class="form-label">Фамилия*</label>
                                             <input type="text" class="form-control"
                                                    value="{% if form.last_name.value %}{{ form.last_name.value }}{% endif %}"
@@ -69,7 +80,7 @@
                                                     {% endif %}
                                         </div>
 
-                                        <div class="mb-3 col-md-6">
+                                        <div class="mb-2 col-md-6">
                                             <label for="id_phone_number" class="form-label">Номер телефона*</label>
                                             <input type="text" class="form-control"
                                                    value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"
@@ -81,7 +92,7 @@
                                         </div>
                                         <div class="mb-3 col-md-6">
                                             <label for="id_email" class="form-label">Email*</label>
-                                            <input type="email" class="form-control"
+                                            <input type="text" class="form-control"
                                                    value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
                                                    name="email" id="id_email"
                                                    placeholder="Введите email"
@@ -90,10 +101,11 @@
                                                         <div class="alert alert-danger alert-dismissible fade show">{{ form.email.errors }}</div>
                                                     {% endif %}
                                         </div>
-                                        <div class="mb-3 col-12">
+                                        <div class="mb-2 col-12">
                                             <label for="id_delivery_address" class="form-label">Адрес*</label>
                                             <textarea class="form-control"
                                                       name="delivery_address" id="id_delivery_address"
+                                                      value="{% if form.email.value %}{{ form.email.value }}{% endif %}"
                                                       placeholder="Город, улица, дом, квартира" required>
                                                     {% if form.delivery_address.errors %}
                                                         <div class="alert alert-danger alert-dismissible fade show">{{ form.delivery_address.errors }}</div>
@@ -110,56 +122,37 @@
                                                     {% endif %}
                                             </textarea>
                                         </div>
+                                        <div class="col-md-12 mb-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="payment_on_get" id="id_payment_on_get" value="0" checked>
+                                                <label class="form-check-label" for="id_payment_on_get">
+                                                    Оплата картой
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="payment_on_get" value="1" id="id_payment_on_get">
+                                                <label class="form-check-label" for="id_payment_on_get">
+                                                    Оплата при доставке
+                                                </label>
+                                            </div>
+                                            {% if form.payment_on_get.errors %}
+                                                <div class="alert alert-danger alert-dismissible fade show">{{ form.payment_on_get.errors }}</div>
+                                            {% endif %}
+                                        </div>
+
+                                        {% if form.payment_on_get.errors %}
+                                            <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
+                                        {% endif %}
+
+                                        <div class="d-grid mt-3">
+                                            <button type="submit" class="btn btn-dark">Оплатить {{ carts.total_price }}₽</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
                         </div>
-    
-                        <div class="col-lg-4 mb-3">
-                            
-                            <div class="cart-summary p-3 sidebar bg-white h-100">
-
-                                <h5 class="section-title"><span>Итог заказа</span></h5>
-                                <div id="cart-items-container-4">
-                                    {% cart request as carts %}
-                                    {% include 'includes/included_cart_offcanvas.html' %}
-                                </div>
-
-                                <form action="{% url 'mcorders:checkout' %}" method="post">
-                                    {% csrf_token %}
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="payment_on_get" id="id_payment_on_get" value="0" checked>
-                                        <label class="form-check-label" for="id_payment_on_get">
-                                            Оплата картой
-                                        </label>
-                                    </div>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="payment_on_get" value="1" id="id_payment_on_get">
-                                        <label class="form-check-label" for="id_payment_on_get">
-                                            Оплата при доставке
-                                        </label>
-                                    </div>
-
-                                    {% if form.payment_on_get.errors %}
-                                        <div class="alert alert-danger alert-dismissible fade show">{{form.payment_on_get.errors}}</div>
-                                    {% endif %}
-
-                                    <div class="d-grid mt-3">
-                                        <a href="{% url 'mcorders:checkout' %}" class="btn btn-dark">Оплатить {{ carts.total_price }}₽</a>
-                                    </div>
-                                </form>
-
-                            </div>
-    
-                        </div>
-    
-                    </div>
-
-                </form>
-
-                
+                </div>
             </div>
-            
         </main>
 {% endblock %}

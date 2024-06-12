@@ -21,6 +21,8 @@ class Order(models.Model):
     created_timestamp = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания заказа")
     phone_number = models.CharField(max_length=20, verbose_name="Номер телефона")
     delivery_address = models.TextField(null=True, blank=True, verbose_name="Адрес доставки")
+    email = models.CharField(max_length=50, blank=True, null=True, verbose_name="Электронная почта")
+    comment = models.TextField(blank=True, null=True, verbose_name='Комментарий')
     payment_on_get = models.BooleanField(default=False, verbose_name="Оплата при получении")
     is_paid = models.BooleanField(default=False, verbose_name="Оплачено")
     status = models.CharField(max_length=50, default='В обработке', verbose_name="Статус заказа")

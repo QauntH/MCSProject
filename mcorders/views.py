@@ -25,9 +25,10 @@ def checkout(request):
                         order = Order.objects.create(
                             user=user,
                             phone_number=form.cleaned_data['phone_number'],
-                            requires_delivery=form.cleaned_data['requires_delivery'],
                             delivery_address=form.cleaned_data['delivery_address'],
                             payment_on_get=form.cleaned_data['payment_on_get'],
+                            email=form.cleaned_data['email'],
+                            comment=form.cleaned_data['comment'],
                         )
                         # Создать заказанные товары
                         for cart_item in cart_items:
@@ -36,10 +37,6 @@ def checkout(request):
                             price = cart_item.product.sell_price()
                             quantity = cart_item.quantity
 
-                            if product.quantity < quantity:
-                                raise ValidationError(f'Недостаточное количество товара {name} на складе\
-                                                           В наличии - {product.quantity}')
-
                             OrderItem.objects.create(
                                 order=order,
                                 product=product,
@@ -47,17 +44,16 @@ def checkout(request):
                                 price=price,
                                 quantity=quantity,
                             )
-                            product.quantity -= quantity
                             product.save()
 
                         # Очистить корзину пользователя после создания заказа
                         cart_items.delete()
 
                         messages.success(request, 'Заказ оформлен!')
-                        return redirect('user:profile')
-            except ValidationError as e:
-                messages.success(request, str(e))
-                return redirect('cart:order')
+                        return redirect('mcuser:profile')
+            except ValidationError:
+                messages.success(request, 'Что-то пошло не так :(')
+                return redirect('mcorders:checkout')
     else:
         initial = {
             'first_name': request.user.first_name,
