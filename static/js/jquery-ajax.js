@@ -35,10 +35,12 @@ $(document).ready(function () {
                 var cartItemsContainer1 = $("#cart-items-container-1");
                 var cartItemsContainer2 = $("#cart-items-container-2");
                 var cartItemsContainer3 = $("#cart-items-container-3");
+                var cartItemsContainer4 = $("#cart-items-container-4");
 
                 cartItemsContainer1.html(data.cart_items_html_1);
                 cartItemsContainer2.html(data.cart_items_html_2);
                 cartItemsContainer3.html(data.cart_items_html_3);
+                cartItemsContainer4.html(data.cart_items_html_4);
 
             },
 
@@ -87,10 +89,12 @@ $(document).ready(function () {
                 var cartItemsContainer1 = $("#cart-items-container-1");
                 var cartItemsContainer2 = $("#cart-items-container-2");
                 var cartItemsContainer3 = $("#cart-items-container-3");
+                var cartItemsContainer4 = $("#cart-items-container-4");
 
                 cartItemsContainer1.html(data.cart_items_html_1);
                 cartItemsContainer2.html(data.cart_items_html_2);
                 cartItemsContainer3.html(data.cart_items_html_3);
+                cartItemsContainer4.html(data.cart_items_html_4);
 
             },
 
@@ -154,10 +158,12 @@ $(document).ready(function () {
                 var cartItemsContainer1 = $("#cart-items-container-1");
                 var cartItemsContainer2 = $("#cart-items-container-2");
                 var cartItemsContainer3 = $("#cart-items-container-3");
+                var cartItemsContainer4 = $("#cart-items-container-4");
 
                 cartItemsContainer1.html(data.cart_items_html_1);
                 cartItemsContainer2.html(data.cart_items_html_2);
                 cartItemsContainer3.html(data.cart_items_html_3);
+                cartItemsContainer4.html(data.cart_items_html_4);
 
             },
             error: function (data) {

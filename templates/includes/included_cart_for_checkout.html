@@ -1,0 +1,35 @@
+{% load static %}
+{% load carts_tags %}
+
+{% cart request as carts %}
+
+{% if carts %}
+<div class="table-responsive">
+    <table class="table offcanvasCart-table text-end">
+        <thead>
+        <tr>
+            <th class="text-center">Название</th>
+            <th>Кол-во</th>
+            <th>Сумма</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for cart in carts %}
+                    <tr>
+                        <td class="text-center"><a href="{% url 'mcshop:product_detail' cart.product.slug %}">{{ cart.product.name }}</a></td>
+                        <td class="text-center">{{ cart.quantity }}</td>
+                        <td>{{ cart.product.sell_price }} ₽</td>
+                    </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" class="text-end">Итог:</td>
+                <td>{{ carts.total_price }} ₽</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% else %}
+    <h5>ВАША КОРЗИНА ПУСТА :(</h5>
+{% endif %}

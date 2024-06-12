@@ -263,10 +263,6 @@ def product_detail(request, product_slug):
     return render(request, 'mcshop/product_detail.html', context=context)
 
 
-def checkout(request):
-    return render(request, 'mcshop/checkout.html')
-
-
 def configurator(request):
     return render(request, 'mcshop/configurator.html')
 
@@ -314,12 +310,16 @@ def cart_add(request):
     cart_items_html_3 = render_to_string(
         'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
     )
+    cart_items_html_4 = render_to_string(
+        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
+    )
 
     response_data = {
         'message': 'Товар добавлен в корзину',
         'cart_items_html_1': cart_items_html_1,
         'cart_items_html_2': cart_items_html_2,
         'cart_items_html_3': cart_items_html_3,
+        'cart_items_html_4': cart_items_html_4,
     }
 
     return JsonResponse(response_data)
@@ -346,12 +346,16 @@ def cart_change(request):
     cart_items_html_3 = render_to_string(
         'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
     )
+    cart_items_html_4 = render_to_string(
+        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
+    )
 
     response_data = {
         'message': 'Количество изменено',
         'cart_items_html_1': cart_items_html_1,
         'cart_items_html_2': cart_items_html_2,
         'cart_items_html_3': cart_items_html_3,
+        'cart_items_html_4': cart_items_html_4,
     }
 
     return JsonResponse(response_data)
@@ -377,12 +381,16 @@ def cart_remove(request):
     cart_items_html_3 = render_to_string(
         'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
     )
+    cart_items_html_4 = render_to_string(
+        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
+    )
 
     response_data = {
         'message': 'Товар удален из корзины',
         'cart_items_html_1': cart_items_html_1,
         'cart_items_html_2': cart_items_html_2,
         'cart_items_html_3': cart_items_html_3,
+        'cart_items_html_4': cart_items_html_4,
         'quantity_deleted': quantity,
     }
 
