@@ -310,16 +310,12 @@ def cart_add(request):
     cart_items_html_3 = render_to_string(
         'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
     )
-    cart_items_html_4 = render_to_string(
-        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
-    )
 
     response_data = {
         'message': 'Товар добавлен в корзину',
         'cart_items_html_1': cart_items_html_1,
         'cart_items_html_2': cart_items_html_2,
         'cart_items_html_3': cart_items_html_3,
-        'cart_items_html_4': cart_items_html_4,
     }
 
     return JsonResponse(response_data)
@@ -346,16 +342,13 @@ def cart_change(request):
     cart_items_html_3 = render_to_string(
         'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
     )
-    cart_items_html_4 = render_to_string(
-        'includes/included_cart_offcanvas.html', {'carts': user_cart}, request=request
-    )
+
 
     response_data = {
         'message': 'Количество изменено',
         'cart_items_html_1': cart_items_html_1,
         'cart_items_html_2': cart_items_html_2,
         'cart_items_html_3': cart_items_html_3,
-        'cart_items_html_4': cart_items_html_4,
     }
 
     return JsonResponse(response_data)

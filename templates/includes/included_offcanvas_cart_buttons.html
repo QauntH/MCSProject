@@ -1,0 +1,10 @@
+{% load static %}
+{% load carts_tags %}
+
+{% cart request as carts %}
+
+
+<div class="text-end mt-3">
+    <a href="{% url 'mcorders:checkout' %}" class="btn btn-outline-dark">К оплате</a>
+    <a href="{% url 'mcshop:cart' %}" class="btn btn-outline-dark">Корзина</a>
+</div>

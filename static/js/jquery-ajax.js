@@ -37,6 +37,7 @@ $(document).ready(function () {
                 var cartItemsContainer3 = $("#cart-items-container-3");
                 var cartItemsContainer4 = $("#cart-items-container-4");
 
+
                 cartItemsContainer1.html(data.cart_items_html_1);
                 cartItemsContainer2.html(data.cart_items_html_2);
                 cartItemsContainer3.html(data.cart_items_html_3);

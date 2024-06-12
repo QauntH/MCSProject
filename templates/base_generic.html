@@ -138,9 +138,15 @@
                     <button type="button" class="btn-close"
                     data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body" id="cart-items-container-3">
+                <div class="offcanvas-body">
 
-                    {% include 'includes/included_cart_offcanvas.html' %}
+                    <div id="cart-items-container-3">
+                        {% include 'includes/included_cart_offcanvas.html' %}
+                    </div>
+                    <div class="text-end mt-3">
+                        <a href="{% url 'mcorders:checkout' %}" class="btn btn-outline-dark">К оплате</a>
+                        <a href="{% url 'mcshop:cart' %}" class="btn btn-outline-dark">Корзина</a>
+                    </div>
 
                 </div>
             </div>
@@ -306,9 +312,9 @@
                                         </li>
                                     </ul>
                                 </li>
-{#                                <li class="nav-item">#}
-{#                                    <a class="nav-link" href="{% url 'mcshop:configurator' %}">Конфигуратор</a>#}
-{#                                </li>#}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'mcshop:cart' %}">Корзина</a>
+                                </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'mcuser:pay' %}">Оплата и доставка</a>
                                 </li>

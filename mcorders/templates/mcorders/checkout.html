@@ -117,12 +117,13 @@
     
                         <div class="col-lg-4 mb-3">
                             
-                            <div class="cart-summary p-3 sidebar bg-white h-100" id="cart-items-container-4">
+                            <div class="cart-summary p-3 sidebar bg-white h-100">
 
                                 <h5 class="section-title"><span>Итог заказа</span></h5>
-
-                                {% cart request as carts %}
-                                {% include 'includes/included_cart_for_checkout.html' %}
+                                <div id="cart-items-container-4">
+                                    {% cart request as carts %}
+                                    {% include 'includes/included_cart_offcanvas.html' %}
+                                </div>
 
                                 <form action="{% url 'mcorders:checkout' %}" method="post">
                                     {% csrf_token %}
@@ -145,7 +146,7 @@
                                     {% endif %}
 
                                     <div class="d-grid mt-3">
-                                        <button type="submit" class="btn btn-dark">Оплатить</button>
+                                        <a href="{% url 'mcorders:checkout' %}" class="btn btn-dark">Оплатить {{ carts.total_price }}₽</a>
                                     </div>
                                 </form>
 
